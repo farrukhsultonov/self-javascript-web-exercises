@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form name="login">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+<h1>List One</h1>
+<ul>
+    <li class="odd list-one-item">List 1, Item 1</li>
+    <li class="even list-one-item">List 1, Item 2</li>
+</ul>
+<h1>List Two</h1>
+<ul>
+    <li class="odd list-two-item">List 2, Item 1</li>
+    <li class="even list-two-item">List 2, Item 2</li>
+</ul>
+<h1 id="main-heading">Hello World!</h1>
+<div id="main-section">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+</div>
+<a href="http://www.yahoo.com" id="search-link">Web Search</a>
+<ul>
+    <li data-bill="123">Item one</li>
+    <li data-bill="234">Item two</li>
+</ul>
+<button id="btnToClick">Click Me</button>
+<script>
+    // -------------------------------get element by id--------------------------------------------------
+    // let button = document.getElementById("btnToClick");
+    // console.log(typeof button);
+    // console.log(document.getElementById("main-section"));
+
+    // -------------------------------get element by class name--------------------------------------------------
+    // let evenElements = document.getElementsByClassName("even");
+    // // console.log(evenElements[0]);
+    // for(let i = 0; i < evenElements.length; i++){
+    //     console.log(evenElements[i]);
+    // }
+    // console.log(typeof evenElements);
+    // -------------------------------get element by tag name--------------------------------------------------
+    // let li = document.getElementsByTagName("li");
+    // console.log(li[2]);
+    // for(let i = 0; i < li.length; i++){
+    //     console.log(li[i])
+    // }
+    // -------------------------------accessing form inputs--------------------------------------------------
+    // let username = document.forms.login.username;
+    // console.log(username.value);
+    // -------------------------------Inner HTML and Text accessibility--------------------------------------------
+    // let name = prompt("what is your name?");
+    // let mainHeading = document.getElementById("main-heading");
+    // mainHeading.innerHTML = "hello from " + name;
+    // console.log(mainHeading)
+    // -------------------------------Accessing or Modifying Attributes--------------------------------------------
+    //checking for attribute
+    // let searchLink = document.getElementById("search-link");
+    // // console.log(searchLink.hasAttribute("href"));
+    //
+    // //how to get value of attribute
+    // console.log(searchLink.getAttribute("href"));
+    //
+    // //how to set new attribute(first argument is attribute type, second is attribute value)
+    // searchLink.setAttribute("class", "btn")
+    // console.log(searchLink)
+    // searchLink.setAttribute("href", "https://wendys.com")
+    //
+    // //how to remove an attribute
+    // searchLink.removeAttribute("class")
+
+    //-------------------------------Accessing data/custom attributes--------------------------------------------
+    // let liTags = document.getElementsByTagName("li");
+    // for(let i = 0; i < liTags.length; i++){
+    //     console.log(liTags[i].getAttribute("data-bill"));
+    // }
+    //-------------------------------Accessing or Modifying Styles-------------------------------------------
+    let firstH1 = document.getElementsByTagName("h1")[0];
+    //every node/element you select has the style property
+    firstH1.style.color = "red";
+
+    let body = document.getElementsByTagName("body")[0];
+    body.style.background = "yellow";
+
+    let ul = document.getElementsByTagName("ul");
+    for(let i = 0; i < ul.length; i++){
+        ul[i].style.display = "flex";
+    }
+
+    //-------------------------------query Selector-------------------------------------------
+    console.log(document.querySelector("h1").innerHTML);
+    console.log(document.querySelector(".even").innerHTML);
+    console.log(document.querySelector("#main-heading").innerHTML);
+
+
+</script>
+</body>
+</html>

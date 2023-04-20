@@ -1,0 +1,95 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Document</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<p>Hello World!</p>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two-Column Layout</title>
+    <style>
+        /* Simple styling for demonstration purposes only */
+        body {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header, nav, main, aside, footer {
+            padding: 20px;
+        }
+        header, nav, aside, footer {
+            background-color: #ccc;
+            color: #fff;
+            flex-basis: 20%;
+        }
+        main {
+            flex-basis: 40%;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 32px;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="logo.png" alt="Logo">
+    <h1>Subscribe Now</h1>
+    <button>Sign Up</button>
+</header>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+<main>
+    <section class="pricing-plans">
+        <h2>Pricing Plans</h2>
+        <p>Choose from our various pricing plans that suit your needs.</p>
+        <ul>
+            <li>Basic Plan: $10/month</li>
+            <li>Standard Plan: $20/month</li>
+            <li>Premium Plan: $30/month</li>
+        </ul>
+    </section>
+    <article>
+        <h2>About Our Product</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis mattis felis. Fusce vel luctus lectus. Nullam eget libero in mi dictum pretium. Sed vel nisi quis sapien laoreet mollis ac vel lorem. Vestibulum eget metus ac lacus efficitur convallis sed quis est. Ut ornare eros id enim imperdiet laoreet.</p>
+        <p>Donec tristique, sapien ac vehicula pulvinar, urna ex fringilla sapien, eget convallis velit lorem sed tellus. Maecenas aliquam, ipsum eget convallis consectetur, libero dolor venenatis ipsum, at fermentum arcu velit eu magna. Nam vitae nisl blandit, iaculis odio sed, hendrerit nisi. Praesent tempor odio vitae ante interdum, vel feugiat velit volutpat. Duis tempor, sem eu ultrices iaculis, orci risus vestibulum nibh, sed iaculis urna arcu non purus. Fusce ut sapien euismod, euismod eros a, lacinia ante. Suspendisse aliquam nisi ac lectus volutpat bibendum. Proin consectetur risus eget est molestie, vel sodales nibh malesuada. Ut scelerisque quam turpis, a commodo sem blandit sed.</p>
+    </article>
+</main>
+<aside>
+    <h2>Related Links</h2>
+    <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+    </ul>
+</aside>
+<footer>
+    <p>&copy; 2023 All rights reserved</p>
+    <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+    </ul>
+</footer>
+

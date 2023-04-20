@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map Lecture</title>
+    <!-- Mapbox JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 75%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<script src="js/keys.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="js/mapbox-geocoder.js"></script>
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = MAPBOX_TOKEN;
+    let map = new mapboxgl.Map({
+        //setting the location for my map depending on the id in my html
+        container: 'map', // container ID
+        //this is setting my mapboxgl styling
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        //this decides how zoomed in my map is
+        zoom: 10, // starting zoom
+        //this adds the center to my map
+        center: [-96.7970, 32.7767] // [lng, lat]
+    })
+
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: OPEN_WEATHER_APPID,
+        q:     "Dallas, US",
+        units: "imperial"
+    }).done(function(data) {
+        console.log(data);
+        console.log(data.list);
+        // for (let i = 0; i <=39; i+=8){
+        //     console.log(data.list[i]);
+        // }
+        console.log(data.list[0]);
+        // console.log(data.list[8]);
+        // console.log(data.list[16]);
+        // console.log(data.list[24]);
+        // console.log(data.list[32]);
+    });
+
+
+</script>
+</body>
+</html>

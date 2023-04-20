@@ -1,0 +1,62 @@
+/*#map {*/
+/*    display: flex;*/
+/*    width: 90%;*/
+/*    height: 45vh;*/
+/*    margin: 20px auto;*/
+/*}*/
+/*.container {*/
+/*    display: flex;*/
+/*    width: 90vw;*/
+/*}*/
+/*#searchBar {*/
+/*    margin: 20px 100px;*/
+/*}*/
+/*.panel {*/
+/*    height: 42vh;*/
+/*    border-radius: 50px;*/
+/*    border: 1px solid black;*/
+/*    color: black;*/
+/*    cursor: pointer;*/
+/*    flex: 0.5;*/
+/*    margin: 10px;*/
+/*    position: relative;*/
+/*    transition: flex 0.7s ease-in;*/
+/*}*/
+/*.panel.active {*/
+/*    flex: 5;*/
+/*    background-image: url("../img/weather1.jpeg");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+/*.panel h5 {*/
+/*    font-size: 20px;*/
+/*    margin: 8px auto;*/
+/*    text-align: center;*/
+/*    opacity: 0;*/
+/*}*/
+/*.panel p {*/
+/*    font-size: 15px;*/
+/*    opacity: 0;*/
+/*    margin: 5px auto;*/
+/*    text-align: center;*/
+/*}*/
+/*.panel.active h5 {*/
+/*    opacity: 1;*/
+/*    transition: opacity 0.3s ease-in 0.4s;*/
+/*}*/
+/*.panel.active p {*/
+/*    opacity: 1;*/
+/*    transition: opacity 0.3s ease-in 0.4s;*/
+/*}*/
+/*.panel.active span {*/
+/*    opacity: 1;*/
+/*    transition: opacity 0.3s ease-in 0.4s;*/
+/*}*/
+/*.panel hr {*/
+/*    opacity: 0;*/
+/*}*/
+/*.panel.active hr {*/
+/*    opacity: 1;*/
+/*    transition: opacity 0.3s ease-in 0.4s;*/
+/*}*/

@@ -1,0 +1,145 @@
+<!--HTML Elements:-->
+<!-- - used to describe the data in a web document-->
+<!-- - give meaning and context to information being displayed-->
+<!-- - all elements have an opening & closing tag, unless it's a void element-->
+
+
+
+<!--Block-Level and Inline Elements:-->
+<!-- - Block-level elements are elements that occupy the full width of their container and create a new block-level box on the page. -->
+<!-- - They are typically used for larger sections of content, such as headings, paragraphs, lists, and dividers. -->
+<!-- - By default, block-level elements start on a new line and their width and height can be manipulated using CSS.-->
+<!-- - they generally contain data, other block-level elements, or inline elements-->
+<!-- - Some examples of block-level elements are:-->
+<!--<div> -->
+<!--<h1>-<h6> -->
+<!--<p>-->
+<!--<ul> or <ol>-->
+<!--<br>-->
+<!--<hr>-->
+
+
+<!-- - inline elements-->
+<!-- - Inline-level elements are elements that only take up as much width as necessary and do not create a new line. -->
+<!-- - They are typically used for smaller elements within a block-level element, such as links, spans, and images.-->
+<!-- - Inline-level elements can be nested within other inline-level elements or block-level elements, but they cannot contain block-level elements themselves. -->
+<!-- - By default, the height and width of inline-level elements are determined by their content. -->
+<!-- - Some examples of inline-level elements are: -->
+<!--<a>-->
+<!--<span>-->
+<!--<img>-->
+<!--<em>-->
+
+
+
+<!--Void Elements:-->
+<!--Some HTML elements, are defined as "void elements".-->
+<!--This simply means that they do not contain any content.-->
+<!--A void element therefore has no closing tag-->
+<!--Examples of void elements are:-->
+<!--<br>-->
+<!--<hr>-->
+<!--<img>-->
+<!--<input>-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+
+        .heading {
+            /*background-color: green;*/
+            border-radius: 10px;
+        }
+
+        .heading3 {
+            background-color: green;
+            border-radius: 10px;
+            width:300px;
+            height: 250px;
+        }
+
+        #close {
+            /*background-color: green;*/
+            width: 50px;
+        }
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+
+<div class="heading">
+    <h1>This is my article</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto consectetur, eaque est exercitationem expedita explicabo fugiat libero magnam nemo nulla odio optio perferendis quis quos rem repudiandae rerum soluta?</p>
+
+</div>
+
+<!--<div class="heading">-->
+<!--    <h1>This is my second article</h1>-->
+
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto consectetur, eaque est exercitationem expedita explicabo fugiat libero magnam nemo nulla odio optio perferendis quis quos rem repudiandae rerum soluta?</p>-->
+
+<!--</div>-->
+
+<!--<div class="heading3">-->
+<!--    <h1>This is my third article</h1>-->
+
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto consectetur, eaque est exercitationem expedita explicabo fugiat libero magnam nemo nulla odio optio perferendis quis quos rem repudiandae rerum soluta?</p>-->
+
+<!--</div>-->
+
+
+<h2>Our Products</h2>
+
+<table>
+    <tr>
+        <th>Plan</th>
+        <th>Price</th>
+        <th>Features</th>
+
+    </tr>
+    <tr>
+        <td>Starter</td>
+        <td>$99</td>
+        <td>Base Technology</td>
+    </tr>
+    <tr>
+        <td>Advanced</td>
+        <td>$199</td>
+        <td>Additional Features</td>
+    </tr>
+    <tr>
+        <td>Premium</td>
+        <td>$499</td>
+        <td>Unlimited Support</td>
+    </tr>
+</table>
+
+
+<p><i>&copy;All products come with our quality guarantee™</i></p>
+
+<a href="#top">Go to the top of page.</a>
+
+<!--<button class="button">open</button>-->
+<!--<button id="close" class="button">close</button>-->
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="./css/box-model-lec.css">
+</head>
+<body>
+
+
+<!--The box model is basically just the idea that everything in css is a box. And those boxes have a couple of different properties. And the box model is composed of four parts.-->
+
+<!--Content: This is the actual content of the element, such as text, images, or other media.-->
+
+<!--Padding: This is the space between the content and the border of the box. It can be set using the CSS padding property.-->
+
+<!--Border: This is a line that surrounds the padding and content of the box. It can be set using the CSS border property.-->
+
+<!--Margin: The margin is the space outside the element's border. It creates a gap between the element and the neighboring elements. It can be set using the CSS margin property.-->
+
+
+<!--An analysis I like to think about when I'm thinking of a box model is:-->
+<!-- - Let's say its cold outside we're gonna be putting on a jacket, we want to make sure we're properly prepared for this cold day outside.-->
+<!-- - We can think of ourselves as the content.-->
+<!-- - We can think of the padding as maybe like the thickness of the jacket we want-->
+<!-- - And the border can be like the outside layer of the jacket, that's actually the layer that's protecting me from the rain/snow-->
+<!-- - Finally margin is like how we had to keep 6 feet distance during covid. margin is like that it tells other elements to keep the specified margin distance.-->
+
+<!--=============================================================================================-->
+
+<!--Lets look as an example-->
+
+<div id="one">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate hic impedit maxime quas reiciendis sequi unde. Cumque delectus dolorum eaque, esse expedita minima nesciunt odio, perspiciatis possimus rem totam veritatis.</div>
+
+<div id="two">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate hic impedit maxime quas reiciendis sequi unde. Cumque delectus dolorum eaque, esse expedita minima nesciunt odio, perspiciatis possimus rem totam veritatis.</div>
+
+<div id="three">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate hic impedit maxime quas reiciendis sequi unde. Cumque delectus dolorum eaque, esse expedita minima nesciunt odio, perspiciatis possimus rem totam veritatis.</div>
+
+
+<!--padding example-->
+<h1>Hello!</h1>
+<button>Click</button>
+
+<!--box-sizing: border-box is a CSS property that changes the way the browser calculates the size of an HTML element. By default, the box-sizing property is set to content-box, which means that the width and height of an element do not include its padding or border. This can sometimes lead to unexpected layout issues, especially when you need to set specific dimensions for your elements.-->
+
+<!--When you set the box-sizing property to border-box, the browser includes the padding and border of an element in its total width and height. This means that if you set the width and height of an element to 100px, for example, the padding and border will be included in that total, so the actual content area will be smaller. This can be helpful in ensuring that elements maintain their size and position regardless of the padding and border values.-->
+
+<div class="example-content-box">Content Box Example</div>
+<div class="example-border-box">Border Box Example</div>
+
+<!--=============================================================================================-->
+
+<div class="box">
+    <p>This is a box.</p>
+    <span>Here is some text in a span.</span>
+</div>
+
+
+</body>
+</html>

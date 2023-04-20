@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="header">Dom events lecture</h1>
+<input id="input">
+<button id="btn1">Click Me!</button>
+<button id="btn2">Remove Event Listener</button>
+<h3>Login form</h3>
+<form>
+    <label for="username">Username</label><br>
+    <input id="username" name="username"><br>
+    <label for="email">Email</label><br>
+    <input id="email" name="email"><br>
+    <label for="password">Password</label><br>
+    <input id="password" name="password" type="password"><br>
+    <button id="login-btn" type="button">Login</button>
+</form>
+<script>
+    //--------------------------------------steps to create a dom event-------------------------------------------------
+    // 1. select an element(probably store it in a variable as it is best practice)
+    let header = document.getElementById("header");
+    // 2. add event listener function with event type, and function handler
+    header.addEventListener("click", function (){
+        console.log("single click event fired off")
+        header.style.color = "blue";
+    });
+
+    header.addEventListener("dblclick", function (){
+        header.style.color = "black";
+    })
+
+    header.addEventListener("mouseenter", function (){
+        header.innerHTML = "greetings Kotlin";
+    })
+
+    header.addEventListener("mouseout", function (){
+        header.innerHTML = "Dom events lecture";
+    })
+
+    //keypress will only fire off on alphanumeric keystrokes
+    let input = document.getElementById("input");
+    input.addEventListener("keypress", function (){
+        console.log(input.value);
+    })
+    //keyup will only fire off on alphanumeric keystrokes when the keyboard is released
+    input.addEventListener("keyup", function (){
+        console.log(input.value);
+    })
+
+    //---------------------------removing event listeners---------------------------------------------
+    var listener = function (event) {
+        alert('You clicked the button!');
+    }
+
+    // add event listener to btn1
+    var btn1 = document.getElementById('btn1');
+    btn1.addEventListener('click', listener);
+
+    var remover = function (event) {
+        // remove event listener from btn1
+        btn1.removeEventListener('click', listener);
+        console.log('Event listener removed.');
+    }
+
+    // add event listener to btn2
+    var btn2 = document.getElementById('btn2');
+    btn2.addEventListener('click', remover);
+
+    //getting form inputs
+    let loginBtn = document.getElementById("login-btn");
+    loginBtn.addEventListener("click", function (e){
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        console.log(username);
+        console.log(email);
+        console.log(password);
+        // create a user authentication object
+        let userAuthObj = {
+            username: username,
+            email: email,
+            password: password
+        }
+        console.log(userAuthObj)
+        document.getElementById("header").innerHTML = "Welcome " + userAuthObj.username + "!";
+        console.log(e);
+    })
+</script>
+</body>
+</html>

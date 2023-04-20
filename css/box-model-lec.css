@@ -1,0 +1,125 @@
+/*------- CSS Box Model -------
+
+
+CSS Box Model:
+- Every element in an HTML document is represented as a rectangular box
+- CSS box properties:
+    + height & width   (applies to the content)
+    + padding
+    + border
+    + margin
+
+    width: 200px;                   content width
+    height: 200px;                  content height
+    padding: 1px 3px 30px 5px;      padding between content and border (top + right + bottom + left)
+    border: 1px solid black;        border (width + style + color)
+    margin: 10px 3px 30px 5px;      margin beyond border, does not add to element size
+
+- The overall size for the box of an element is calculated as follows:
+    height = height + padding-top + padding-bottom + border-top + border-bottom
+    width = width + padding-left + padding-right + border-left + border-right
+
+
+Div/Span:
+- content container
+- without semantic meaning
+- for the purpose of applying style
+- <div>...</div>
+    + generic container for flow content
+    + block-level element
+    + does not represent anything
+    + used to group elements for styling purposes
+    + use when no other semantic element (such as <article> or <nav>) is appropriate
+- <span>...</span>
+    + generic container for phrasing content
+    + inline element
+    + does not inherently represent anything
+    + used to group elements for styling purposes
+    + use when no other semantic element is appropriate
+*/
+
+
+div {
+    width: 300px;
+    height: 150px;
+    background-color: indianred;
+}
+
+#one {
+    background-color: pink;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+
+#two {
+    background-color: darkred;
+}
+
+#three {
+    background-color: grey;
+}
+
+
+
+/*padding example*/
+h1 {
+    background: pink;
+    width: 100px;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+
+button {
+    padding: 20px
+}
+
+/*--------------------------------------------------------------------*/
+
+
+
+
+
+/* Box sizing example of content box and border box*/
+.example-content-box {
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+.example-border-box {
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+
+.box {
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    border: 1px solid black;
+    /*margin: 10px;*/
+    margin-top: 200px;
+}
+
+.box p {
+    font-size: 24px;
+}
+
+.box span {
+    font-size: 18px;
+    margin: 40px;
+    background-color: #e6e6e6;
+    padding: 5px;
+}
+
+/*--------------------------------------------------------------------*/

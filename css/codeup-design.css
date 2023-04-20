@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css?family=Abel%7CAnton');
+
+* {
+    box-sizing: border-box;
+}
+
+.font-abel{
+    font-family: 'Abel', sans-serif;
+}
+.font-anton{
+    font-family: 'Anton', sans-serif;
+}
+
+.logo{
+    background-image: url("../images/logo.jpg");
+}
+
+.circular {
+    border-radius: 20em;
+
+}
+.icon-size{
+    width: 105px;
+    height: 105px;
+}
+.icon-pill{
+    width: 18px;
+    height: 18px;
+}
+.navbar-brand{
+    font-size: 1rem;
+}
+.circle-text{
+
+}
+.bg-red{
+    background-color:#E6563B ;
+}
+.bg-orange{
+    background-color: #eb9d3a;
+}
+.bg-green{
+    background-color: #7cb06c;
+}
+.bg-blue{
+    background-color: #00aba9;
+}
+.bg-whiteish{
+    background-color: #f0f0f0;
+}
+.bg-grey{
+    background-color: #e6e6e6;
+}
+
+.border-white {
+    border: solid white .35rem !important;
+}
+
+.border {
+    border: solid #e6e6e6 .35rem !important;
+}
+
+.border-small {
+    border: solid #e6e6e6 .15rem !important;
+}
+
+.div-text-center {
+    padding-top: 2rem;
+}
+
+.no-flex{
+    flex:none !important;
+}
+
+.apples {
+    background-image: url("../images/apple-ipad.jpg");
+}
+
+.laptop{
+    background-image: url("../images/macbook.jpg");
+}
+
+.glasses-man {
+    background-image: url("../images/man.jpg");
+}
+
+.security {
+    background-image: url("../images/security.jpg");
+}
+
+.img-sizing {
+    display: block;
+    height: 90%;
+    width: 100%;
+}
+.img-sizing-small {
+    height: 50px;
+    width: 50px;
+}
+
+.bg-white {
+    height: 4em;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    #margin-fix {
+        margin-top: -6em;
+    }
+    .navbar-brand{
+        margin-right:0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #margin-fix > nav > h3, #margin-fix > nav{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+}
+
+@media screen and (min-width: 576px) {
+    .margin-fix-small {
+        margin-top: -6em;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .image-fix {
+        margin-top: -5em;
+    }
+}
+
+.fab{
+    color: #1da1f1;
+}
+
+
+
+@media screen and (max-width: 575px) {
+    .nav-container{
+        max-width: 75%;
+    }
+}
+
+.margin-pill {
+    margin-right: .25rem
+}

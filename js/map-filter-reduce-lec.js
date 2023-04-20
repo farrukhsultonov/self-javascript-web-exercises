@@ -1,0 +1,3 @@
+// https://github.com/CodeupClassroom/xerxes-web-exercises/blob/main/js/mfr-lec.js
+
+// The filter method returns a new array with all the elements that satisfy the provided test condition. The filter method takes a callback function as the first argument and executes the callback function for every element of the array. Each array element value is passed as the first parameter to the callback function.

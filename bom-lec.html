@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<!--The Browser Object Model (BOM) is a way for JavaScript to interact with the web browser.
+- The window object is the core of the BOM and represents the web browser.
+- Through the window object, we can control the browser's size and position, open pop-up windows, display system dialogs, or run interval-based processing. The window object also represents the JavaScript Global object, which means that any variables or functions declared in the global scope become part of the window object.
+
+The BOM provides system dialogs such as alert(), confirm(), and prompt() which are made available through the window object. We can also execute code at a set interval of time or after a certain time interval has passed using the setInterval() and setTimeout() methods respectively.
+- The setInterval() method allows code to be executed at a specified time interval until the method clearInterval() is called.
+- And the setTimeout() method allows code to be executed after a specified time interval has passed and can be cancelled using the clearTimeout() method.-->
+
+
+
+
+<script>
+
+    // console.log(window.innerWidth)
+    // console.log(window.innerHeight)
+
+
+
+    let count = 0;
+    let max = 10;
+    let interval = 1000;
+
+    // function sayHello() {
+    //     return "hello";
+    // }
+    // setInterval(sayHello, 5000);
+
+    let intervalId = setInterval(function (){
+        if(count >= max){
+            clearInterval(intervalId);
+            console.log("All done")
+            // location.reload();
+        }else {
+            count++;
+            console.log('Repeating this line ' + count)
+        }
+    }, interval)
+
+
+    let delay = 5000;
+
+    let timeoutId = setTimeout(function (){
+        alert('Here is a delayed hello!');
+        location = "https://java.codeup.com";
+    }, delay);
+
+    // clearTimeout(timeoutId);
+</script>
+</body>
+</html>
