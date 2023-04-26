@@ -1,0 +1,13 @@
+div {
+    background: palevioletred;
+    color: antiquewhite;
+}
+
+#summary {
+    border: 2px solid red;
+    background: black;
+}
+
+.section {
+    background: purple;
+}
