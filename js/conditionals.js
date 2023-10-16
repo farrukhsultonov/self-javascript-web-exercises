@@ -28,18 +28,17 @@
 // 3. Need to return a string
 // 4. Return a string depending on the input that is passed.
 
-        // function analyzeColor(color) {
-        //     // return some string
-        //     if(color === 'red') {
-        //         return "Red is gud.";
-        //     } else if (color === 'blue') {
-        //         return 'Blue is gooder.';
-        //     } else if (color === 'yellow') {
-        //         return 'Yellow is goodest.';
-        //     } else {
-        //         return 'Never heard of that one. That color is no good.';
-        //     }
-        // }
+// function analyzeColor(color){
+//     if (color === 'blue'){
+//         return "Blue is the color of the sky";
+//     } else if (color === 'red'){
+//         return "Strawberries are red";
+//     } else if (color === 'cyan'){
+//         return "Cyan is complementary to red";
+//     } else {
+//         return "I have no information on that color";
+//     }
+// }
         //
         // console.log(analyzeColor('blue'));
         // console.log(analyzeColor('cyan'));
@@ -69,18 +68,18 @@
 // 2. Establish a parameter named 'color'
 // 3. Need to return a string
 // 4. Return a string depending on the input that is passed.
-//     function analyzeColor(color) {
-//         switch (color) {
-//             case 'red':
-//                 return 'Red is gud.';
-//             case 'blue':
-//                 return 'Blue is gooder.';
-//             case 'yellow':
-//                 return 'Yellow is goodest.'
-//             default:
-//                 return "Never heard of that one. That color is no good."
-//         }
+// function analyzeColor(color){
+//     switch (color){
+//         case("blue"):
+//             return "Blue is the color of the sky";
+//         case("red"):
+//             return "Strawberries are red";
+//         case("cyan"):
+//             return "Cyan is complementary to red";
+//         default:
+//             return "I have no information on that color";
 //     }
+// }
 
     // No need for a "break" because the return will exit out of the Switch Case.
     // console.log(analyzeColor('blue'));
@@ -95,8 +94,8 @@
      * function to show it to the user.
      */
 
-    let userColor = prompt("Enter a color!")
-    alert(analyzeColor(userColor));
+    // let userColor = prompt("Enter a color!")
+    // alert(analyzeColor(userColor));
 
     /* ########################################################################## */
 
@@ -149,7 +148,7 @@
         }
     }
 
-    console.log(calculateTotal(1, 100)); // returns 100
+    // console.log(calculateTotal(1, 100)); // returns 100
     // console.log(calculateTotal(4, 100)); // returns 50
     // console.log(calculateTotal(5, 100)); // returns 0
     /**
@@ -198,24 +197,24 @@ alert("Your lucky number is: " + luckyNumber + ". Your total before discount: $"
 
 
     // 1. user choice
-        let UserConfirm = confirm("Would you like to give me a number?");
-        if (UserConfirm) {
-            // THEY WANNA PLAY!
-            let userNum = parseFloat(prompt("Enter a number!"));
-            if (userNum === 0) {
-                alert("0 is neither odd nor even.");
-                alert("0 is neither positive nor negative")
-                alert("Your number + 100 = " + (userNum + 100))
-            } else if (!isNaN(userNum)) {
-                // TERNARY
-                alert(userNum % 2 === 0 ? "Number is even" : "Number is odd.");
-                // TERNARY
-                alert(userNum > 0 ? "Number is positive." : "Number is negative.")
-                alert("Your number + 100 = " + (userNum + 100))
-            } else {
-                alert("Sorry, what you entered is not a number!")
-            }
-        }
+    //     let UserConfirm = confirm("Would you like to give me a number?");
+    //     if (UserConfirm) {
+    //         // THEY WANNA PLAY!
+    //         let userNum = parseFloat(prompt("Enter a number!"));
+    //         if (userNum === 0) {
+    //             alert("0 is neither odd nor even.");
+    //             alert("0 is neither positive nor negative")
+    //             alert("Your number + 100 = " + (userNum + 100))
+    //         } else if (!isNaN(userNum)) {
+    //             // TERNARY
+    //             alert(userNum % 2 === 0 ? "Number is even" : "Number is odd.");
+    //             // TERNARY
+    //             alert(userNum > 0 ? "Number is positive." : "Number is negative.")
+    //             alert("Your number + 100 = " + (userNum + 100))
+    //         } else {
+    //             alert("Sorry, what you entered is not a number!")
+    //         }
+    //     }
 
 
 
@@ -241,33 +240,33 @@ alert("Your lucky number is: " + luckyNumber + ". Your total before discount: $"
 // }
 
 
-let usrConfirm = confirm("Would you like to enter a number?");
-
-if (usrConfirm) {
-    let usrInputNum = parseFloat(prompt("Enter any number"));
-    if (!usrInputNum) {
-        alert("You didn't input a number")
-    } else {
-        alert(evenOrOdd(usrInputNum));
-        alert(add100(usrInputNum));
-        alert(posOrNeg(usrInputNum));
-    }
-}
-
-function evenOrOdd(number) {
-    if (number % 2 === 0)
-        return `${number} is an even number!`;
-    else
-        return `${number} is an odd number!`;
-}
-
-function add100(number) {
-    return `${number} + 100 = ${number + 100}`;
-}
-
-function posOrNeg(number) {
-    if (number >= 0)
-        return `${number} is a positive number!`;
-    else
-        return `${number} is a negative number!`;
-}
+// let usrConfirm = confirm("Would you like to enter a number?");
+//
+// if (usrConfirm) {
+//     let usrInputNum = parseFloat(prompt("Enter any number"));
+//     if (!usrInputNum) {
+//         alert("You didn't input a number")
+//     } else {
+//         alert(evenOrOdd(usrInputNum));
+//         alert(add100(usrInputNum));
+//         alert(posOrNeg(usrInputNum));
+//     }
+// }
+//
+// function evenOrOdd(number) {
+//     if (number % 2 === 0)
+//         return `${number} is an even number!`;
+//     else
+//         return `${number} is an odd number!`;
+// }
+//
+// function add100(number) {
+//     return `${number} + 100 = ${number + 100}`;
+// }
+//
+// function posOrNeg(number) {
+//     if (number >= 0)
+//         return `${number} is a positive number!`;
+//     else
+//         return `${number} is a negative number!`;
+// }
