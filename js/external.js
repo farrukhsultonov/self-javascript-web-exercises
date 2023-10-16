@@ -40,3 +40,7 @@ let offer = confirm("Has the offer expired?");
 let isPremium = confirm("Are you a premium member?");
 
 alert(((itemsBought) > 2 || isPremium) && !offer);
+
+
+let userAge = prompt("What is your age")
+alert(`Your age is ${userAge}`)
