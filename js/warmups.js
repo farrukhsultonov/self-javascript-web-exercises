@@ -1,7 +1,6 @@
 // In your warmUps.js file, create a function named “largestNum” that takes in three numbers as input and returns the largest of the three
 //
 // Example Output:
-//
 //     findLargestNumber(5, 10, 15) // returns 15
 // findLargestNumber(1, 2, 3) // returns 3
 
@@ -17,7 +16,7 @@ function findLargestNumber(num1, num2, num3) {
     }
 }
 
-console.log(findLargestNumber(5, 10, 15))
+console.log(findLargestNumber(15, 10, 5))
 
 
 let x = 5;

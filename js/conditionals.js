@@ -240,33 +240,42 @@ alert("Your lucky number is: " + luckyNumber + ". Your total before discount: $"
 // }
 
 
-// let usrConfirm = confirm("Would you like to enter a number?");
-//
-// if (usrConfirm) {
-//     let usrInputNum = parseFloat(prompt("Enter any number"));
-//     if (!usrInputNum) {
-//         alert("You didn't input a number")
-//     } else {
-//         alert(evenOrOdd(usrInputNum));
-//         alert(add100(usrInputNum));
-//         alert(posOrNeg(usrInputNum));
-//     }
-// }
-//
-// function evenOrOdd(number) {
-//     if (number % 2 === 0)
-//         return `${number} is an even number!`;
-//     else
-//         return `${number} is an odd number!`;
-// }
-//
-// function add100(number) {
-//     return `${number} + 100 = ${number + 100}`;
-// }
-//
-// function posOrNeg(number) {
-//     if (number >= 0)
-//         return `${number} is a positive number!`;
-//     else
-//         return `${number} is a negative number!`;
-// }
+let userConfirm = confirm("Would you like to enter a number?")
+
+if(userConfirm) {
+    let userInput = parseFloat(prompt("Enter any number"));
+    if(isNaN(userInput)) {
+        alert("You didn't input a number");
+    }else {
+        alert(isEvenOdd(userInput))
+        alert(addOneHundred(userInput))
+        alert(posNeg(userInput))
+    }
+}
+
+// Even or Odd function
+function isEvenOdd(num) {
+    if(num === 0){
+        return `${num} is neither odd or even`
+    } else if(num % 2 === 0) {
+        return `${num} is an even number!`
+    } else if (num % 2 === 1){
+        return `${num} is an odd number!`
+    }
+}
+
+// add 100 function
+function addOneHundred(num) {
+    return `${num} + 100 is ${num + 100}`
+}
+
+// pos or neg function
+function posNeg(num){
+    if(num > 0) {
+        return`${num} is a positive number`
+    }else if (num < 0) {
+        return `${num} is a negative number`
+    }else {
+        return `${num} is nor positive or negative`
+    }
+}
