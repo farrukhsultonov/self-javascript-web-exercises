@@ -17,11 +17,11 @@ for(let i = 0; i < 10; i++){
     }
 }
 
-//4.
+// 4.
 // for(let i = 1; i <= 9; i++){
 //     console.log(i.toString().repeat(i));
 // }
-//
+
 // for (let i = 1; i < 10; i++){
 //     let num = ""
 //     for(let j = 0; j < i; j++){
@@ -32,7 +32,7 @@ for(let i = 0; i < 10; i++){
 
 
 
-//5.
+// 5.
 //     for(let i = 100; i >= 5; i -= 5){
 //         console.log(i)
 //     }

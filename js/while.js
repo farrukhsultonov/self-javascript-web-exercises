@@ -4,6 +4,7 @@ while(num <= 65536){
     console.log(num);
 }
 
+
 // do while loop problem
 // 1.  generate a random number between 50 and 100 representing the amount of cones
 // 2.  sell cones inside loop
@@ -11,10 +12,10 @@ while(num <= 65536){
 // 4.  in a do while console.log the amount of cones sold to each person
 
 // This is how you get a random number between 50 and 100
-var allCones = Math.floor(Math.random() * 50) + 50;
+let allCones = Math.floor(Math.random() * 50) + 50;
 // This expression will generate a random number between 1 and 5
 do {
-    var soldCones = Math.floor(Math.random() * 5) + 1;
+    let soldCones = Math.floor(Math.random() * 5) + 1;
     // console.log(allCones)
     if(soldCones <= allCones){
         console.log(`${soldCones} cones sold...`)
