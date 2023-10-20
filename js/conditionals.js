@@ -130,23 +130,31 @@
     // 5 = 1
     // Depending on the lucky number, a discount will be applied.
 
+    // function calculateTotal(luckyNum, totalAmount) {
+    //     if (luckyNum === 0) {
+    //         return totalAmount;
+    //     } else if (luckyNum === 1) {
+    //         return totalAmount - (0.10 * totalAmount);
+    //     } else if (luckyNum === 2) {
+    //         return totalAmount - (0.25 * totalAmount);
+    //     } else if (luckyNum === 3) {
+    //         return totalAmount - (0.35 * totalAmount);
+    //     } else if (luckyNum === 4) {
+    //         return totalAmount - (0.50 * totalAmount);
+    //     } else if (luckyNum === 5) {
+    //         return totalAmount - (1 * totalAmount);
+    //     } else {
+    //         return "Invalid lucky number. Please enter a lucky number between 0 and 5"
+    //     }
+    // }
+
+
+
     function calculateTotal(luckyNum, totalAmount) {
-        if (luckyNum === 0) {
-            return totalAmount;
-        } else if (luckyNum === 1) {
-            return totalAmount - (0.10 * totalAmount);
-        } else if (luckyNum === 2) {
-            return totalAmount - (0.25 * totalAmount);
-        } else if (luckyNum === 3) {
-            return totalAmount - (0.35 * totalAmount);
-        } else if (luckyNum === 4) {
-            return totalAmount - (0.50 * totalAmount);
-        } else if (luckyNum === 5) {
-            return totalAmount - (1 * totalAmount);
-        } else {
-            return "Invalid lucky number. Please enter a lucky number between 0 and 5"
-        }
+        return luckyNum === 0 ? totalAmount : "xyz"
+        ? luckyNum === 1 : "yuz"
     }
+    calculateTotal(1, 100);
 
     // console.log(calculateTotal(1, 100)); // returns 100
     // console.log(calculateTotal(4, 100)); // returns 50
@@ -160,11 +168,10 @@
      * price before the discount was, and what their price after the discount is.
      */
 // Generate a random number between 0 and 6
-    let luckyNumber = Math.floor(Math.random() * 6);
+//     let luckyNumber = Math.floor(Math.random() * 6);
 //
-let userBill = prompt("What was the total amount?");
-alert("Your lucky number is: " + luckyNumber + ". Your total before discount: $" + userBill + '. Your total after the discount: $' + calculateTotal(luckyNumber, userBill));
-
+// let userBill = prompt("What was the total amount?");
+// alert("Your lucky number is: " + luckyNumber + ". Your total before discount: $" + userBill + '. Your total after the discount: $' + calculateTotal(luckyNumber, userBill));
     /**
      * TODO:
      * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -240,42 +247,44 @@ alert("Your lucky number is: " + luckyNumber + ". Your total before discount: $"
 // }
 
 
-let userConfirm = confirm("Would you like to enter a number?")
+// let userConfirm = confirm("Would you like to enter a number?")
+//
+// if(userConfirm) {
+//     let userInput = parseFloat(prompt("Enter any number"));
+//     if(isNaN(userInput)) {
+//         alert("You didn't input a number");
+//     }else {
+//         alert(isEvenOdd(userInput))
+//         alert(addOneHundred(userInput))
+//         alert(posNeg(userInput))
+//     }
+// }
+//
+// // Even or Odd function
+// function isEvenOdd(num) {
+//     if(num === 0){
+//         return `${num} is neither odd or even`
+//     } else if(num % 2 === 0) {
+//         return `${num} is an even number!`
+//     } else if (num % 2 === 1){
+//         return `${num} is an odd number!`
+//     }
+// }
+//
+// // add 100 function
+// function addOneHundred(num) {
+//     return `${num} + 100 is ${num + 100}`
+// }
+//
+// // pos or neg function
+// function posNeg(num){
+//     if(num > 0) {
+//         return`${num} is a positive number`
+//     }else if (num < 0) {
+//         return `${num} is a negative number`
+//     }else {
+//         return `${num} is nor positive or negative`
+//     }
+// }
 
-if(userConfirm) {
-    let userInput = parseFloat(prompt("Enter any number"));
-    if(isNaN(userInput)) {
-        alert("You didn't input a number");
-    }else {
-        alert(isEvenOdd(userInput))
-        alert(addOneHundred(userInput))
-        alert(posNeg(userInput))
-    }
-}
 
-// Even or Odd function
-function isEvenOdd(num) {
-    if(num === 0){
-        return `${num} is neither odd or even`
-    } else if(num % 2 === 0) {
-        return `${num} is an even number!`
-    } else if (num % 2 === 1){
-        return `${num} is an odd number!`
-    }
-}
-
-// add 100 function
-function addOneHundred(num) {
-    return `${num} + 100 is ${num + 100}`
-}
-
-// pos or neg function
-function posNeg(num){
-    if(num > 0) {
-        return`${num} is a positive number`
-    }else if (num < 0) {
-        return `${num} is a negative number`
-    }else {
-        return `${num} is nor positive or negative`
-    }
-}
