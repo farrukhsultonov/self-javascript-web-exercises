@@ -85,6 +85,10 @@ function findLongestString(longestInput1, longestInput2){
 
 
 // 10. isFactor
-function isFactor(factorInput1, factorInput2){
-    return parseFloat(factorInput2) % parseFloat(factorInput1) === 0;
+function isFactor (input1, input2) {
+    if (typeof input1 !== 'number' || typeof input2 !== 'number' || input1 === 0) { // no need to check for null (input1 === null || input2 === null) because 0 is one of the falsy value that represents null in javascript
+        return false
+    } else {
+        return input2 % input1 === 0;
+    }
 }
