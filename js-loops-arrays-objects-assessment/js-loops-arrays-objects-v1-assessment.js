@@ -26,17 +26,6 @@ function double(num){
 
 
 // 4. remove9s
-function remove9s(num){
-    let cleanArray = [];
-    num.forEach(function(el){
-        if(el !== 9){
-            cleanArray.push(el);
-        }
-    });
-    return cleanArray;
-}
-
-// ********* another solution to number 4 ***************
 function remove9s(numbers) {
     const resultArray = [];
 
@@ -45,9 +34,19 @@ function remove9s(numbers) {
             resultArray.push(numbers[i]);
         }
     }
-
     return resultArray;
 }
+
+// ********* another solution to number 4 ***************
+// function remove9s(num){
+//     let cleanArray = [];
+//     num.forEach(function(el){
+//         if(el !== 9){
+//             cleanArray.push(el);
+//         }
+//     });
+//     return cleanArray;
+// }
 
 
 // 5. average
@@ -79,12 +78,9 @@ function countOdds(num){
 function averageSales(num){
     let totalSales = 0;
 
-    for (let i = 0; i < people.length; i++) {
-        if (typeof num[i].sales === 'number') {
-            totalSales += num[i].sales;
-        }
+    for (let i = 0; i < num.length; i++) {
+        totalSales += num[i].sales;
     }
-
     return totalSales / num.length;
 }
 
@@ -98,30 +94,37 @@ function convertNameToObject(fullName){
 // 9. countVowels
 function countVowels(str){
     let sum = 0;
-    let vowels = ['a', 'e', 'i', 'u', 'o'];
 
     for (let i = 0; i < str.length; i++) {
-        if (vowels.has(str[i])) {
-            count++;
+        //check if any of the characters in string are a vowel
+        if (str.charAt(i) === 'a'|| str.charAt(i) === 'e' ||
+            str.charAt(i) === 'i'|| str.charAt(i) === 'o' ||
+            str.charAt(i) ==='u') {
+            sum++
         }
     }
-
-    return count;
+    return sum;
 }
 
 
 // 10 analyzeWord
-function analyzeWord(param){
-    return {word: param, numberOfLetters: param.length, numberOfVowels: countVowels(param)};
+function analyzeWord(string){
+    return {
+        word: string,
+        numberOfLetters: string.length,
+        numberOfVowels: countVowels(string)
+    }
 }
 
 
 // 11. capitalizeName
-function capitalizeName(param){
-    let names = param.split(" ");
-    let firstCapital = names[0].charAt(0).toUpperCase();
-    let secondCapital = names[1].charAt(0).toUpperCase();
-    return firstCapital + names[0].split("").slice(1, names[0].length).join("")
-        + ' ' +
-        secondCapital + names[1].split("").slice(1, names[1].length).join("") ;
+function capitalizeName(string){
+    //turn the one string into two separate names
+    let stringArr = string.split(' ');
+    //capitalize the first Letter of each word in array and concatenate the ending substring
+    for (let i = 0; i < stringArr.length; i++) {
+        // The substring() method extracts characters
+        stringArr[i] = stringArr[i][0].toUpperCase() + stringArr[i].substring(1);
+        //turn the array back into a string
+    } return stringArr.join(' ')
 }
