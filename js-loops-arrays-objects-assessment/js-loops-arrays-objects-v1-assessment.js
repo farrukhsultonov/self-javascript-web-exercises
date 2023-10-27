@@ -12,18 +12,15 @@ function isNegative(num){
     return num < 0;
 }
 
-
 // 2. isTen
 function isTen(num){
     return num === 10;
 }
 
-
 // 3. double
 function double(num){
     return num * 2;
 }
-
 
 // 4. remove9s
 function remove9s(numbers) {

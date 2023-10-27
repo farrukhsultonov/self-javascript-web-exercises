@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register With Us</title>
+</head>
+
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <label for="email">
+        <span>Email</span>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+    </label>
+    <br>
+    <label for="password">
+        <span>Password</span>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+    </label>
+    <br>
+    <label for="bio">
+        <span>Bio</span>
+        <textarea id="bio" name="bio" placeholder="Tell us about yourself ..."></textarea>
+    </label>
+    <section>
+        <h2>Where did you hear about us?</h2>
+        <label for="billboard">
+            <input type="checkbox" id="billboard" name="marketing_options" value="billboard">
+            <span>Billboard</span>
+        </label>
+        <br>
+        <label for="radio_adv">
+            <input type="checkbox" id="radio_adv" name="marketing_options" value="radio advertisement">
+            <span>Radio Advertisement</span>
+        </label>
+        <br>
+        <label for="internet_adv">
+            <input type="checkbox" id="internet_adv" name="marketing_options" value="internet advertisement">
+            <span>Internet Advertisement</span>
+        </label>
+        <br>
+        <label for="other">
+            <input type="checkbox" id="other" name="marketing_options" value="other">
+            <span>Other</span>
+        </label>
+    </section>
+    <section>
+        <label>
+            <h2>What web browser are you using?</h2>
+            <select id="web_browser" name="web_browser">
+                <option value="chrome">Chrome</option>
+                <option value="safari">Safari</option>
+                <option value="firefox">Firefox</option>
+                <option value="Other">other</option>
+            </select>
+        </label>
+    </section>
+    <br>
+    <button>Submit</button>
+</form>
+
+</body>
+
+</html>
