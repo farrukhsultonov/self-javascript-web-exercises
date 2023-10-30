@@ -1,0 +1,94 @@
+/*Select element by name(element name)*/
+h1{
+    color: gold;
+    text-align: center;
+}
+/*Select element by id*/
+/*#header2{*/
+/*    color: purple;*/
+/*}*/
+#header4{
+    color: darkblue;
+}
+/*Select element by class name*/
+/*.content{*/
+/*    background: brown;*/
+/*}*/
+
+/*multi selector*/
+h1, #header2{
+    font-weight: lighter;
+}
+
+
+.hTags{
+    background-color: #87b9fa;
+}
+
+/*Descendent Selector*/
+#container h1{
+    background: purple;
+}
+
+/*Direct-Child selector*/
+#container>h1{
+    background: #ABC;
+}
+
+
+/*Combining Selectors*/
+h1.content{
+    color: blue;
+}
+
+h2.content{
+    color: green;
+    text-indent: 50px;
+}
+
+/* Pseudo Classes*/
+/* unvisited link (:link) */
+a:link{
+    color: red;
+}
+
+/* visited link (:visited) */
+a:visited{
+    color: green;
+}
+
+/* mouse hover over link (:hover) */
+a:hover{
+    color: yellow;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:brown;
+}
+
+p{
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    font-size: 50px;
+}
+
+html{
+    background-image: url("https://vetmed.illinois.edu/wp-content/uploads/2021/04/pc-keller-hedgehog.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+ol{
+    list-style: upper-alpha;
+}
+
+
+p{
+    border: 5px solid green;
+}
+
+em{
+    border: inherit;
+}

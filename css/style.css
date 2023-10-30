@@ -1,0 +1,43 @@
+.fancy-header {
+    color: purple; /* single line comment */
+    text-decoration: underline;
+    text-align: center;
+}
+
+html{
+    background-color: antiquewhite;
+    background-image: url("https://s7d2.scene7.com/is/image/PetSmart/5330218?$pdp-placeholder-desktop$");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Work Sans', sans-serif;
+}
+
+ul{
+    list-style-type: square;
+}
+
+table{
+    font-size: 25px;
+    padding: 20px;
+}
+
+/* unvisited link (:link) */
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+    font-size: 25px;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
