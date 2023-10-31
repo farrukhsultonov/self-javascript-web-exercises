@@ -16,28 +16,50 @@ ul{
     list-style-type: square;
 }
 
-table{
+
+table {
     font-size: 25px;
     padding: 20px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-/* unvisited link (:link) */
+th, td {
+    border: 2px solid #333;
+    padding: 12px;
+    text-align: center;
+}
+
+thead {
+    background-color: #333;
+    color: white;
+}
+
 a:link {
-    color:red;
+    color: #0077b6;
+    text-decoration: none;
 }
 
-/* visited link (:visited) */
 a:visited {
-    color:black;
+    color: #465a6c;
 }
 
-/* mouse hover over link (:hover) */
 a:hover {
-    color:blue;
-    font-size: 25px;
+    color: #ff6b6b;
+    font-size: 28px;
 }
 
-/* active/selected link (:active) */
 a:active {
-    color:green;
+    color: #4e9367;
 }
+
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 36px;
+}
+
