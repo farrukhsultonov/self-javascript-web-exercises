@@ -33,3 +33,105 @@ function printEvenNumbersBetween1And100() {
 }
 
 printEvenNumbersBetween1And100();
+
+
+
+
+// Objective: Create a function that takes in an array and returns an array of the names of people who know JavaScript.
+
+    // Data Structure/Example Input:
+    // let developers = [
+    //     {
+    //         name: "Jonathan",
+    //         languages: {
+    //             frontend: ["HTML", "JavaScript", "CSS"],
+    //             backend: ["Java"]
+    //         }
+    //     },
+    //     {
+    //         name: "Bonnie",
+    //         languages: {
+    //             frontend: ["JavaScript"],
+    //             backend: []
+    //         }
+    //     },
+    //     {
+    //         name: "Raj",
+    //         languages: {
+    //             frontend: [],
+    //             backend: ["C#", "Java", "Python"]
+    //         }
+    //     },
+    //     {
+    //         name: "Carmen",
+    //         languages: {
+    //             frontend: ["JavaScript", "HTML", "CSS", "React"],
+    //             backend: ["C#", "Java", "Python", "TypeScript"]
+    //         }
+    //     },
+    // ]
+
+
+
+// function knowsJavaScript(developers) {
+//     let javaScriptDevelopers = []
+//     for (let i = 0; i < developers.length; i++) {
+//         if (developers[i].languages.frontend.includes("JavaScript")) {
+//             javaScriptDevelopers.push(developers[i].name)
+//         }
+//     }
+//     return javaScriptDevelopers
+// }
+
+
+// Example input
+let developers = [
+    {
+        name: "Jonathan",
+        languages: {
+            frontend: ["HTML", "JavaScript", "CSS"],
+            backend: ["Java"],
+        },
+    },
+    {
+        name: "Bonnie",
+        languages: {
+            frontend: ["JavaScript"],
+            backend: [],
+        },
+    },
+    {
+        name: "Raj",
+        languages: {
+            frontend: [],
+            backend: ["C#", "Java", "Python"],
+        },
+    },
+    {
+        name: "Carmen",
+        languages: {
+            frontend: ["JavaScript", "HTML", "CSS", "React"],
+            backend: ["C#", "Java", "Python", "TypeScript"],
+        },
+    },
+];
+
+// Call the function and log the result
+// const javascriptDevelopers = knowsJavaScript(developers);
+// console.log(javascriptDevelopers);
+
+
+// ************ Same solution using arrow function ************************
+const knowsJavaScript = (arr) => {
+    let javaScriptDevs = [];
+    for(let i = 0; i < arr.length; i++) {
+        for(let j = 0; j < arr[i].languages.frontend.length; j++) {
+            if(arr[i].languages.frontend[j] === "JavaScript") {
+                javaScriptDevs.push(arr[i].name);
+            }
+        }
+    }
+    return javaScriptDevs;
+}
+
+console.log(knowsJavaScript(developers))
