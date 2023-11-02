@@ -36,6 +36,8 @@ printEvenNumbersBetween1And100();
 
 
 
+// *********************************************************************************************************************
+
 
 // Objective: Create a function that takes in an array and returns an array of the names of people who know JavaScript.
 
@@ -135,3 +137,65 @@ const knowsJavaScript = (arr) => {
 }
 
 console.log(knowsJavaScript(developers))
+
+
+
+// *********************************************************************************************************************
+
+// Create a function that accepts three arguments (arrOfElements, bgColor, textColor), and returns the array of objects with their corresponding properties changed to the inputted values of bgColor and textColor.
+
+let elements = [
+    {
+        el: "button",
+        style: {
+            backgroundColor: "white",
+            color: "black",
+        },
+        content: "Submit",
+    },
+    {
+        el: "p",
+        style: {
+            backgroundColor: "white",
+            color: "black",
+        },
+        content: "Our company is better at doing company things than your company.",
+    },
+    {
+        el: "h2",
+        style: {
+            backgroundColor: "white",
+            color: "black",
+        },
+        content: "Welcome Back!",
+    },
+];
+
+
+// function changeElementProperties(arrOfElements, bgColor, textColor) {
+//     // Iterate through the array of elements
+//     for (let element of arrOfElements) {
+//         // Update the style properties of each element
+//         element.style.backgroundColor = bgColor;
+//         element.style.color = textColor;
+//     }
+//     // Return the modified array of elements
+//     return arrOfElements;
+// }
+
+
+// let updatedElements = changeElementProperties(elements, "blue", "white");
+// console.log(updatedElements);
+
+
+
+// another solution to the above problem
+function findProperties(arrOfElements, bgColor, textColor){
+    for (let i = 0; i < arrOfElements.length; i++) {
+        arrOfElements[i].style.backgroundColor = bgColor;
+        arrOfElements[i].style.color = textColor;
+    }
+    return arrOfElements;
+}
+
+console.log(findProperties(elements, "blue", "red"));
