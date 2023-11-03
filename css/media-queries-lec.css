@@ -1,59 +1,23 @@
-/*!*any screen with at least the width of 500px will have this certain styling be applied*!*/
-/*@media screen and (min-width: 500px){*/
-/*    !*    selectors in this body will only apply, if the width of the screen is at least 500px*!*/
-/*    main{*/
-/*        display: flex;*/
-/*        justify-content: space-evenly;*/
-/*        background-color: #3B94D9;*/
-/*    }*/
-/*}*/
-
-/*!*will define a range for our screen between 960px NS 1200PX(THIS WILL TAKE PRECEDENCE OVER MORE AMBIGUOUS MEDIA QUERIES)*!*/
-/*@media screen and (min-width: 960px) and (max-width: 1200px){*/
-/*    main{*/
-/*        background-color: yellow;*/
-/*    }*/
-/*}*/
-
-/*!*this will apply to any screen so long as the width does no exceed 499px*!*/
-/*@media screen and (max-width: 499px){*/
-/*    main{*/
-/*        background-color: #848487;*/
-/*    }*/
-/*}*/
-
-
-
-/*********************** Another instructors example lecture notes ***************************/
-
-
-div{
-    display: flex;
-}
-
-@media screen and (min-width: 800px) {
-    p{
-        color: red;
-    }
-    div{
-        flex-direction: row;
+/*any screen with at least the width of 500px will have this certain styling be applied*/
+@media screen and (min-width: 500px){
+    /*    selectors in this body will only apply, if the width of the screen is at least 500px*/
+    main{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #3B94D9;
     }
 }
 
-@media screen and (max-width: 500px) {
-    div {
-        flex-direction: column;
+/*will define a range for our screen between 960px NS 1200PX(THIS WILL TAKE PRECEDENCE OVER MORE AMBIGUOUS MEDIA QUERIES)*/
+@media screen and (min-width: 960px) and (max-width: 1200px){
+    main{
+        background-color: yellow;
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 800px){
-    p{
-        font-weight: bold;
+/*this will apply to any screen so long as the width does no exceed 499px*/
+@media screen and (max-width: 499px){
+    main{
+        background-color: #848487;
     }
-    div{
-        flex-wrap: wrap;
-    }
-    /*div{*/
-    /*    flex-direction: column;*/
-    /*}*/
 }
