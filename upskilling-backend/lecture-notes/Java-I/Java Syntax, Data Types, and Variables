@@ -1,0 +1,212 @@
+JavaSyntax, Data Types, and Variables
+
+
+Today's Agenda:
+    - Statements
+    - Comments
+    - Data Types
+    - Strings
+    - Variables
+    - Identifiers and Keywords
+    - Constants
+    - Arithmetic Expressions
+    - Arithmetic and Assignment Operators
+    - Casting
+
+
+Statement:
+    - An executable instruction that tells the compiler what to perform
+    - A statement is roughly equivalent to sentences in natural languages
+    - A statement may tell you to add values of x and y and assign their sum to the variable z
+
+    - All statements must end with a semicolon
+        - unlike Javascript, your Java code will not compile unless every statement ends with a semicolon
+    - Statements can be grouped as a block inside of a curly braces {}
+        - Code inside of {} must be indented
+
+    - A Java statement can be classified into three categories.
+        - Declaration Statement
+            - This statement is used to declare variables
+        - Expression Statement
+            - This statement ends with a semicolon
+        - Control Flow Statement
+            - A statement that has a condition or loops a number of times
+
+Comments:
+    - Provide you additional information and documentation about code.
+    - Comments are written for other programmers who may need to maintain a codebase, including your future self.
+
+   - Luckily Java has the same comments as Javascript
+        // Single Line Comment
+
+        /**
+        *   Multi-Line
+        *   Comments
+        *
+        */
+
+Data Types:
+    There is two main categories of types in Java:
+        - primitive
+        - reference
+    - Primitive Types:
+        - The building blocks of the language;
+        - any variable that holds a primitive type has a value
+        - The 8 primitive data types in Java:
+            1. byte - 1 Byte - very short integers from -128 to 127
+            2. short - 2 Byte - short integers from -32,768 to 32,767
+            3. int - 4 Byte - Integers from -2,147,483,648 to 2,147,483,647
+            4. long - 8 Byte - Long integers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+            5. float - 4 Byte - Single-precision
+            6. double - 8 Byte - Double-precision
+            7. char - 2 Byte - Single Character
+            8. Boolean - 1 Byte - True or False value
+        - FOR NUMERIC TYPES, you can assign a value or lesser precision to a type of greater precision, but not the other way around.
+
+    - Reference Types:
+        - Refers to objects or Arrays
+        - Default to a special value, null
+        - Discuss more when we get to passing values into methods and objects.
+
+Strings:
+    - Unlike Javascript, there is a difference in single and double quotes.
+    - Single Quotations are for single characters
+    - Double Quotations are for strings.
+    Ex:
+        Correct:
+            "This is a string"
+            'D'
+        DO NOT DO THIS:
+            'This is a bad things'
+
+    - When you use special characters in your string, it must be escaped (with a backlash \)
+        " \" "  ->  "
+        "\\"    ->  \
+        "\n"    ->  New Line Character
+        "\t"    ->  New Tab Character
+
+    - We will dive deeper in strings in a later chapter
+
+
+Variables:
+    - ALl variable must be declared before they are used.
+    - When creating, you must include the type of variable
+    Example:
+        int id;
+        boolean isAdmin;
+        float bankAccountBalance;
+
+       or
+
+       int id = 1001;
+       boolean isAdmin = true;
+       float bankAccountBalance = 10000.98
+
+       or
+
+       int theAnswer;
+       String question;
+
+       theAnswer = 42;
+       question = "What is your favorite color?";
+
+Identifiers and Keywords
+    - Identifiers is a valid name for a class, method, or variable
+    - Rules for Identifiers:
+        - Start with a letter, underscore, or dollar sign.
+        - consist of letters, dollar signs, underscores, and digits
+        - No more than 255 characters
+    - Keywords are reserved words and can NOT be used as identifiers.
+
+Constants
+    - These are values that cannnot change while a program is running.
+    - It is common to see constants named with all caps, with underscores (_)
+    - You create a constant with the keyword 'final'
+
+   Example:
+        final String API_KEY = "b4b2b4n29"
+        final int SIDES_OF_A_DICE = 6;
+        final String GITHUB_API_BASE_URL = "https://api.github.com";
+
+Arithmetic Expressions
+
+    Binary Operators vs Unary Operators
+        - Binary Operators
+            - Binary Operators works on two arguments of the same type and return a new value in the same type
+                +   ->   Addition
+                -   ->   Subtraction
+                *   ->  Multiplication
+                /   ->  Division
+                %   ->  Modulus
+
+            Example:
+                discount * price
+                sum / total
+
+        - Unary Operators:
+            - Unary Operator works with a single argument and returns a new value
+                ++  ->  Increment (Pre and Post)
+                --  ->  decrement (Pre and Post)
+                +   ->  Positive Sign
+                -   ->  Negative Sign
+
+            Example:
+                ++NumberIncrease
+                NumberDecrease--
+
+            Shorthand arithmetic assignment:
+                int myNumber = 2 + 12 +2;
+                myNumber += 9:
+                // equivalent to:
+                myNumber = myNumber + 9;
+
+Casting:
+    - coercing a value of one type into another
+    - two type of casting:
+        - Implicit:
+            - Involves assigning a value of less precise data type to a variable whose type is of higher precision
+            or
+             going from a more specific to a less specific type
+            - No addition code is needed, it will happen with no direct expressed
+        EXAMPLE:
+            int myInt = 900;
+            long morePrecise = myInt;
+
+            - We assigned a value of type int to a variable of type long
+            - The long variable can hold a larger range of values than 'int' can.
+            - this is called 'WIDENING CONVERSION'
+
+        - Explicit:
+            - Involves going from a less specific type to a more specific type, or going from a higher precision type to lower precision type
+            - In order to happen, we need to put the name of type we are casting to inside of parenthesis before the value to be cast.
+
+        Example:
+            double pi = 3.14159
+            int almostPi = (int) pi;
+
+            - We are going from a double to an int
+            - This is called 'NARROWING CONVERSION'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

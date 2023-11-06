@@ -1,0 +1,318 @@
+Object Oriented Programming
+
+* In this lecture we will learn to create and use:
+    - Objects
+    - Static
+    - Instance fields
+    - Constructors
+    - Visibility
+
+* We been using Objects-Oriented concepts, such as 'Math' that contains static methods and fields and the 'Scanner' class,
+which we have created instances of to get command line input from the user.
+
+
+Today's Agenda:
+    - Classes and Objects
+    - Static vs Instance
+    - Constructors
+    - The 'This' Keyword
+    - Visibility
+
+
+Classes and Objects
+    - CLASSES:
+        - Used to define a custom type of Java
+        - Think of a class as a blueprint for objects.
+    - FIELD:
+        - A variable or method that belongs to an object or a class
+        - Can be accessed with the "." operator
+        - Fields belongs to objects, but can be defined as belonging to a class with the static keyword.
+        - Fields are either properties (Variables) or Methods (Functions)
+    - OBJECTS:
+        - an instance of a class
+        - Objects have fields and methods, and are instantiated.
+        - Created with a 'new' keyword
+
+    EXAMPLE:
+
+        - Create a Person class in my src.
+
+         //-- Three Fields (Instance Variable & Instance Method)
+            //-- 2 Instance Variable
+            public String firstName;
+            public String lastName;
+
+            //-- 1 Instance Method
+            public String sayHello(){
+                return String.format("Hello from %s %s!", firstName, lastName);
+            }
+
+            //-- Main Method
+            public static void main(String[] args) {
+                //-- Creating an Instance of our Person class
+                //-- Defining a variable (human1) with the type of person
+                Person human1 = new Person();
+
+                //-- Assigning values to the object's fields
+                human1.firstName = "Rick";
+                human1.lastName = "Sanchez";
+                //-- Calling the methods and printing its return
+                System.out.println(human1.sayHello());
+            }
+
+Static vs Instance
+    - Fields can belong to a class or an object
+    - For the recent example we only seen instance fields.
+        - Fields that belong to an instance
+        - Meaning that each object can have a different values for their instance field.
+
+    Example:
+
+        - Add to MAIN method
+
+            //-- Creating two other humans
+            //  Each instance of the person will collect different values for each field
+            //  However they both will have firstName and lastName field
+            Person human2 = new Person();
+            human2.firstName ="Spongebob";
+            human2.lastName ="Squarepants";
+
+            Person human3 = new Person();
+            human3.firstName = "Sandy";
+            human3.lastName = "Checks";
+
+            System.out.println(human2.sayHello());
+            System.out.println(human3.sayHello());
+
+
+    - Static Fields:
+        - Belong to a class as a whole
+        - Accessible through the class itself.
+        - They are accessible without creating an instance of the class.
+
+        Example:
+        Math.PI
+
+        - We didn't write any code that instantiates the Math class, we just added the "." after the class name and refer to the static field
+
+        - Static fields are defined with the static keyword, and are shared by all instances of the class,
+         - Static fields should not be anything that is supposed to be unique to instances of the class.
+         - Should contain information that all instances will use or methods and fields that are meant to be accessed only statically.
+
+        Example:
+
+            //Static Property
+            public static double pi = 3.14159;
+
+            // Static Methods
+            public static int add(int x, int y){
+                return x + y;2
+
+            }
+            // Static Methods
+            public static int multiply(int x, int y){
+                return x * y;
+            }
+
+            System.out.println(Person.add(2,3));
+            System.out.println(Person.multiply(2,3));
+
+        - The Person class is only meant to be referenced statically, meaning that we'll never create instances of it.
+        - Referring methods and fields through the class name.
+
+
+    Example: Both Static and Instance Fields
+
+        Fields:
+            //-- Static Property
+            public static long worldPopulation = 7_500_000_000L;
+            //-- Instance Property
+            public String name;
+
+
+        Main Method:
+             Person theBestDrummerAlive = new Person();
+            theBestDrummerAlive.name = "Neil Peart";
+
+            // Accessing a static property and adding one
+            Person.worldPopulation += 1;
+
+            System.out.println(Person.worldPopulation);
+
+            // Technically will work, however it's better to reference
+            // static properties through the class, not instances
+            System.out.println(theBestDrummerAlive.worldPopulation);
+
+            //-- Error will occur
+            //    non-static variable name cannot be referenced from a static context
+            //  CHANGE TO:
+    //        System.out.println(theBestDrummerAlive.name);
+            System.out.println(Person.name);
+
+
+Constructors:
+    - A special method that is called when an object is created.
+    - The constructor has the same name as the class and does NOT define a return type
+    - Constructors can accept arguments and be overloaded
+
+    Example:
+
+        FIELD:
+            //-- Instance Variable
+            public String name;
+
+            //-- Person Constructor
+            public Person(){
+                System.out.println("I'm alive!");
+            }
+
+        MAIN METHOD:
+            Person human1 = new Person();
+            Person human2 = new Person();
+
+
+    - You will notice when we use the 'new' keyword to create an instance of the class, the constructor will be called
+
+    - A common use case for constructors is to set, or provide default values for an objects field.
+
+        Example:
+
+        Fields & Constructors:
+           //-- Instance Variable
+           public String name;
+           public String cohort;
+
+           //-- Person Constructor
+           public Person(String studentName){
+               System.out.println("Student Unassigned:");
+               name = studentName;
+               cohort = "Unassigned";
+           }
+
+           //-- Constructor
+           public Person(String studentName, String assignedCohort){
+               System.out.println("Student Assigned:");
+               name = studentName;
+               cohort = assignedCohort;
+           }
+
+           //  Instance Method:
+           public String getInfo(){
+               return String.format("name: %s, co-hort: %s", name, cohort);
+           }
+
+
+       Main:
+        Person human1 = new Person("Bobby");
+        Person human2 = new Person("Lucy", "Fenrir");
+
+        System.out.println(human1.getInfo());
+        System.out.println(human2.getInfo());
+
+    -Here we see Overload Constructor, that are different due to the arguments count
+    - One is taking one, just the persons name
+    - Second one, is taking the student's name and the cohort
+
+
+The "this" Keyword
+    - Provides us a way to refer to the current instance.
+    - You can ONLY us the 'this' keyword inside of an instance method
+    - If you apply anywhere else an error will appear
+    - Think of it as a way to refer to the current object, which is essentially saying "this object."
+
+    Take a look at EXAMPLE:
+
+        class Person {
+            private String name;
+
+            public Person(String name) {
+                // Here, 'this.name' points to the object's 'name' property.
+                this.name = name;
+            }
+
+            public String sayHello() {
+                // Inside this method, 'this.name' accesses the 'name' property.
+                return String.format("%s says hello!", this.name);
+            }
+        }
+
+    - As you see in the constructor we are saying that we want to assign the provided name ot the name property of the object we are creating.
+    - Inside of the 'sayHello()', this.name is used to access the name property of the current Person object
+
+    Example:
+        Field:
+            public String name;
+            public String cohort;
+
+            //-- Instead of duplicating the code to assign to the object's field, we call the constructor that already has this code defined.
+            //   Avoiding Duplications
+            public Person(String name){
+                this(name, "Unassigned");
+            }
+
+
+            public Person(String name, String cohort){
+                this.name = name;
+                this.cohort = cohort;
+            }
+
+            public String sayHello(){
+                return "Hello from "+this.name+"!";
+            }
+
+
+Visibility:
+    - refers to how a class or instance field is allowed to be accessed.
+    - Allowing us to 'encapsulate' our data in our classes.
+        - Only exposing what is necessary to other classes and objects.
+    Keywords:
+        - Public:
+            - Allowing the field to be accessible from anywhere
+        - Private:
+            - Making it only accessible within a class that is defined.
+
+    - Commonly in Java you will define classes with private fields, and create methods to allow access to those fields.
+
+    EXAMPLE:
+
+    * Using the Person CLass:
+    FIELD:
+        // Public Instance Variable
+        public String name;
+        // Private Instance Variable
+        private String address;
+
+        // Constructor
+        public Person(String name, String address){
+            this.name = name;
+            this.address = address;
+        }
+
+        // Public Instance Method
+        public String shareAddress(){
+            return address;
+        }
+
+    * Create a New Class named 'PersonVisibility'
+    MAIN :
+           Person neighbor = new Person("Tim Duncan", "123 Parkway");
+
+           System.out.println(neighbor.name);
+
+           // Compile Time Error: address has private access in Person
+    //     System.out.println(neighbor.address);
+
+            // Instead do:
+            System.out.println(neighbor.shareAddress());
+
+
+    - Show the reference of all the visibility types in Java.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+Console Input and Output
+
+Today's Agenda:
+    - Printing data to the Console
+    - Getting Input From The Console
+        - Import Statements
+        - using the Scanner class
+
+
+
+Printing data to the console:
+    - We have been working with the System class to display information in the console
+        System.out.println
+        System.out.print
+    - Another method we can use is 'System.out.printf()', which allows us to define a string placeholders and then pass a value for those placeholders
+
+    Example:
+        String name = 'codeup';
+        System.out.printf("Hello there, %s. Nice to meet you! %n", name);
+
+        - In the example, the %s will be replaced with the additional passed arguments in the order that they were passed, thus printing "Hello there, codeup. Nice to meet you!"
+
+        String greeting = "Salutations";
+        String name = "codeup";
+        System.out.printf("%s, %s!", greeting, name);
+
+    - There are many other ways to define placeholders, including special formatting for numbers, and the ability to specify how much space a placeholder should take up in the output.
+
+Getting Input from the console:
+    - "Scanner" allows us to get data input that the user enters into the console.
+    - Before we use the the 'Scanner' class, we need to import it.
+
+    - Java organizes through packages, We will define classes in their own packages, but for now we'll be using code from the java.util package.
+    - 'import' statements are what let us use code from other packages.
+    - It will allow us to include code from other java libraries.
+    - They are extremely common in Java code, and eventually every class you create will end up with multiple 'import' statements
+    - 'import' goes at the top of your file.
+
+    - In order to get the scanner to work, first me must import the scanner on top of the file.
+        'import java.util.Scanner;'
+
+Using the 'Scanner' class
+    Example:
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter something: ");
+        String userInput = scanner.next();
+
+        System.out.println("You entered: --> \"" + userInput + "\" <--");
+
+    - First we are declaring a variable of type "Scanner", and assign to it a new Scanner object
+        - Specify 'System.in' for the source of the scanner, refers to information a user types into the console as opposed to a text file.
+        - Don't worry about the specifics of the first line, we will cover more details when we start creating our own object.
+    - Second, we prompt the user to type something, and use the expression 'scanner.next()' to obtain the value the user entered as a 'String', and store it in the variable 'userInput'
+    -Lastly, we print out the value the user entered
+
+    .next() method:
+        - Every entry to the scanner is called a 'token'
+        - 'token' are separated by any whitespace
+        - So if call 'scanner.next()', we will get the first token 'codeup', but if we add another word we will have to call 'scanner.next()' again, returning 'rocks!'
+        Example:
+            String userInput = scanner.nextL();
+            Enter something: codeup rocks!
+            You entered: --> "codeup" <--
+
+
+    .nextLine() method
+        - If we want to get a whole line that was entered, we can use the nextLine method.
+        - Will return any remaining input on the current line as a String
+        Example:
+            String userInput = scanner.nextLine();
+            Enter something: codeup rocks!
+            You entered: --> "codeup rocks!" <--
+
+
+    - There are several other methods that will return the user input as a different type,
+        - nextInt() method -> returns user input type int.

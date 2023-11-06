@@ -1,0 +1,152 @@
+Dependency Management
+
+
+Today's Agenda:
+    - JAR Files
+    - Dependencies
+    - Maven
+    - Creating a new Maven Project with IntelliJ
+
+
+JAR Files:
+    - Java Archive files (JAR Files) are essential for managing dependencies in Java projects and play a crucial role for packaging and distributing Java applications and libraries.
+
+    - What are JAR files?
+        - A JAR file is a zipped directory that acts as a container for various files, typically compiled '.class' files, required for the application to run.
+        - These classes are bundled into a single JAR file, making it easier to manage and distribute software.
+        - JAR files allow us to package everything necessary for running an application in a compact, portable format, making them a neat and efficient way to package Java code.
+
+    - How to create a JAR File:
+        - Creating a JAR file is typically done through our Integrated Development Environment (IDE).
+        - During the creation process, you specify the files, resources, and designate a main class to include in the JAR.
+        - When a main class is specified, the JAR file becomes executable, making it possible to run it on any computer without transferring individual files.
+        - This is handy because you can give the JAR file to someone else, and they can use it on their computer without having to copy all the separate files from your project.
+
+    - Distributing applications and Libraries:
+        - JAR files are an excellent strategy for distributing Java applications and libraries.
+        - They can be easily shared with others or deployed on different computers, simplifying the process of software distribution.
+
+    - Working with External Dependencies:
+        - Besides packaging your own code, you can also include other people's code in JAR files.
+        - When you add an external JAR file to your project, you gain access to the resources it offers.
+        - For Instace:
+            - Imagine you have a toolbox with some basic tool inside.
+            - Think of JAR files as additional tools you can add to your toolbox.
+            - These tools can provide new ways to make your work more efficient.
+            - You wouldn't have to create the tool yourself, you just borrow them from the JAR file.
+            - Like using a friend's tool instead of buying a new one.
+        - This is usefull because now your project can be powerful without starting form scratch.
+
+
+Dependencies:
+    - A dependency refers to any external component or resource that your application replies on to function correctly.
+    - Dependencies can include libraries, frameworks, modules, or even other servics.
+    - They allow us to build upon existing code and tools rather than starting from scratch every project.
+    - An example of dependency to our project, is by including a JAR file in our project.
+    - It is common to have multiple dependencies in a project.
+
+    TYPES OF DEPENDENCIES:
+        - Library Dependencies:
+            - These are external code JAR files that provide pre-built functionality for your application.
+            - Example of libraries of these are:
+                - Database connecitons
+                - HTTP communication
+                - JSON parsing
+        - Service Dependencies:
+            - External services or APIs that your application communicates with.
+            - If your application connects to Facebook for user authentication
+            - Facebook's API is a service dependency.
+
+    Challenges in Dependency Mangement:
+        - One of the challenges in software development is 'dependency management'.
+            - Identification and Versioning:
+                - It is crucial to know what library your application depends on and the specific version.
+                - If you not carefull it can lead to runtime errors and conflicts.
+            - Dependency Resolution:
+                - Make sure to correctly download or reference the correct JAR file, so your project can be easily obtain the required libraries.
+            - upgrading Dependencies:
+                - new versions of libraries always happen, so make sure you want to update your application to contain bug fixes and obtain new features.
+                - Managing these updates can be challenging.
+            - Dependency Storage:
+                - Know where and how these JAR files are stored in your project
+            - Deployment and Packaging:
+                - When distributing your applciation, ask yourself how are these dependencies packaged or deployed along with your application?
+
+        - Luckily, We will be using Apache Maven to help us solve these problems.
+
+BONUS:
+    - We are about to go into discussion about Maven, howver be aware there is other build tools, such as Ant (Older) or Gradle(newer).
+    - At the time of writing this lecture Maven was the most common and popular
+    - Gradle is the next upcoming
+
+Maven:
+    What is Maven?
+        - Maven, came from the Yiddish word meaning "accumulator of Knowledge" is an open-source project management and build automation tool.
+        - It simplifies the management of java projects by using a Project Object Model (POM)
+        - The heart of Maven is the "pom.xml" file.
+        - Inisde of pom.xml file, lives the root of your project directory.
+    POM.xml - Your Project's Blueprint:
+        - XML is a markup language used for data exchange, while HTML is used for defining the structure of web documents.
+        - The POM.xml file is an XML documentation that serves as a blueprint for your Java project.
+        - the "pom.xml" file is where you define the project's metadata, such as the project's name, description, and dependencies.
+
+
+    Anatomy of POM.xml FIle:
+        - There are several key elements that are worth understanding inside of a "pom.xml" file:
+        EXAMPLE:
+            '<project>'
+                The root element of the POM.xml file.
+            '<modelVersion>'
+                Specifies the version of the Project Object Model specification typically set to "4.0.0"
+            '<groupId>' & '<artifactId>'
+                These elements provide a unique identifiaction for your project.
+                '<groupId>'
+                    A domanin name in reverse (com.codeup) that should be under your control
+                '<artifactId>'
+                    A one-word name for your project.
+            '<version>'
+                Represents the version of your application or library.
+                it should be incremented with each release
+            '<dependencies>'
+                A critical part of the POM.xml file, it lists the external libraries that your project relies on.
+                Each dependency within '<dependencies>' is defined within a '<dependency>' element
+
+    Specifying Dependencies:
+        - Dependencies are the fundamental concept in Maven.
+        - Allowing you to incorporate external libraries and resources into your project.
+        - Dependencies are defined with '<dependencies>' section of the POM.xml file.
+            - Each '<dependency>' elemtn contains infomration about the external library
+                '<groupId>', '<artifactId>', and '<version>'
+        - mvnrepository.com
+            offers alot of information abotu Java libraries, and ready to use dependency of your POM.xml
+
+    Managing java Versions:
+        - Sometimes IDEs may override the version of Java we used in our project
+        - In order to ensure consistency, we must specify the Java version in our POM.xml file within the '<build>' section.
+        - This the "maven-compiler-plugin"
+        - It is used to not allow our IDE to override the version of Java we are using in our project.
+        -  Inconsistent Java versions can lead to errors and compatibility problems in your project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

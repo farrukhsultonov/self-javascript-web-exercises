@@ -1,0 +1,189 @@
+Control Statements and loops
+
+Today's Agenda:
+    - Boolean Expressions
+    - Logical Operators
+    - String Comparison
+    - Control Structures
+        - if Statement
+        - Switch Statements
+        - While Loop
+        - Do Loop
+        - For Loop
+        - Break and Continue
+
+Boolean Expressions
+    - An expression that evaluates to a boolean value
+    - Either true or false
+    - There is 6 relational operators, returning a boolean value
+            ==  Equality
+            !=  Inequality
+            >   Greater Than
+            <   Less Than
+            >=  Greater Than or Equal
+            <=  Less Than oar Equal
+    - Unlike Javascript, Java has no concept of truthy or falsy, the expressions must evaluate to boolean values
+
+Logical Operators
+    - Allow us to combine multiple boolean values to produce a single boolean value.
+    - The value depends on the boolean operands and the rules of the operator
+
+        &&  AND  Return TRUE when both expression is true (Only evaluates the second expression if necessary)
+        ||  Or   Return TRUE if either expression is true (Only evaluates the second expression if necessary)
+        &   AND  Return TRUE if both expression are true. (Always evaluates both expressions)
+        |   Or   Return TRUE if expression is true. (Always evaluates both expressions)
+        !   NOT  Reverses the value of the expression
+
+    Example:
+
+        if (isLoggedIn && isAdmin) { // user is logged in *and* is an admin
+            // show the admin panel
+        }
+
+        if (isAdmin || isAuthor) { // user is an admin *or* user is the author
+            // edit the content
+        }
+
+        if (!loggedIn) { // user is *not* logged in
+            // redirect to login page
+        }
+
+        // Determine if the input submitted from a site registration form is valid
+        boolean inputHasErrors = username.isEmpty()
+            || email.isEmpty()
+            || password.isEmpty()
+            || (! password.equals(passwordConfirmation));
+
+
+String Comparison
+    - Currently we use '===' to compare primitive types
+    - With strings it is different, string is a different object
+    - With string we will use either to compare:
+        '.equals()'
+        '.equalsIgnoreCase()'
+
+    Example:
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Continue? [y/N] ")
+        String userInput = sc.next();
+
+        boolean confirmation = userInput.equals("y");
+
+
+Control Structures
+    - allows us to control the flow of execution, either by conditions or by loops
+    - We control our code by using conditions and loops
+
+    *IF STATEMENT*
+        - the if statement will only be executed if the condition evaluates to true.
+            if (/* condition */) {
+                // conditional code
+            }
+
+        - Can be combined with an 'ELSE' or an 'ELSE IF' to create multiple branches of condition
+            if (someCondition) {
+                // executes if someCondition is true
+            } else if (someOtherCondition) {
+                // executes if someOtherCondition is true *and* all of the previous ifs in
+                // this block were false
+            } else {
+                // executes if none of the conditions checked in this block were true
+            }
+
+    *SWITCH STATEMENT*
+        - A special case of if-else if block,
+        - Comparing a given value to multiple known values
+        - All values in the case labels of a given switch statement must be of the same type
+        - They must also be either 'literals' or 'final' variables
+        - It's considered good practice to include a "break" statement inside of each 'case' block
+        - Without 'break' the flow of control will continue on the code inside of the next 'case' block AKA 'falling through' should avoid
+
+        Example:
+                int caseSwitch = 1;
+
+                switch (caseSwitch) {
+                    case 1:
+                        System.out.println("Case 1");
+                        // Fall through!
+                    case 2:
+                        System.out.println("Case 2");
+                        break;
+                    default:
+                        System.out.println("Default case");
+                        break;
+                }
+
+
+
+    *While Loop*
+        - A while loop executes the body of the loop as long as the loop condition evaluates to true
+        - The condition will be evaluated before the body of the loop executes and after the body of loop finishes
+
+        Example:
+            int i = 0;
+            while (i < 10) {
+                System.out.println("i is " + i);
+                i++;
+            }
+
+    *Do Loop*
+        - A 'do' or 'do-while' loop is the same as a while loop, except the body of the loop will execute before the condition is evaluated.
+        - Should use a 'do' loop when you want the code inside the body of the loop to evaluate at least once
+        - When you want to loop body to be evaluated before the loop
+
+        Example:
+            do {
+                //Statements
+            }while(/* condition */);
+
+            do {
+                System.out.println("You will see this despite the condition!");
+            } while (false);
+
+
+    *For Loop*
+
+            for(/* init */; /* condition */; /* update */) {
+                // statements
+            }
+
+        - Similar to the while loop, a single statement needs to happen before the loops starts, and a single statement need to be evaluated after the body of the loop during each iteration
+        - a 'for loop' is useful when we know ahead of time how many times our loop needs to execute.
+
+            for(int i = 0; i < 10; i += 1) {
+                System.out.println("i is " + i);
+            }
+
+        - Note that any for loop can also be expressed as a while loop.
+
+
+    *Break and Continue*
+        - can be used to alter the flow of a loop
+
+        Break:
+            - Can be used to exit the current loop
+            - If your in a nested loop, you may break out the loop it is initialized in.
+
+            Example:
+
+                // print the numbers 1 through 5
+
+                for(int i = 1; i < 100; i++) {
+                    System.out.println(i);
+                    if (i == 5) {
+                        break; // --------------+
+                    } //                        |
+                } //                            |
+                // <----------------------------+
+
+        Continue:
+            - used to skip any remaining statements in the current loop and jump to the top of the current loop
+            - May be used to jump to the top of the labeled loop
+
+            Example:
+                for(int i = 1; i <= 10; i++) { // <--+
+                    if(i % 2 == 1) { //              |
+                        continue; // ----------------+
+                    }
+                    System.out.println(i);
+                }

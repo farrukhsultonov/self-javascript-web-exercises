@@ -1,0 +1,46 @@
+Abstract Classes and Interfaces
+
+Today's Agenda:
+    - Abstract Classes
+    - Working with Abstract Classes
+    - INterfaces
+        - Working with Interfaces
+    - Interfaces vs Abstract Classes
+
+
+Abstract Classes:
+    - Like a blue print for other classes.
+    - Thin of it like a superhero custome design,
+    - The word 'abstract' in programming means something that is not complete or concrete.
+    - So an abstract class is like a half-way finished class,
+    - A class that can serve as a super class, but can not directly be instantiated,
+
+    - You can define an abstract class by using the keyword 'abstract' in the calss definition
+
+    - Inside an abstract class, we can have abstract methods.
+    - Which are abstracts without a body.
+        - Think of it like recipe title without the cooking steps.
+    We only know the name, what they return, and what they need to work.
+    - When you extend it to another class, you have to create the body of the method in the subclass.
+
+    - A class that inherits from an abstract class must define all abstract methods, or itself be abstract
+
+    _Why do we use Abstact Classes?
+        - Imagine we are building a team of superheroes (Avengers)
+        - You want them all to have certain abilities
+        - However each hero has their unique way of those powers.
+        - Abstract is like setting a rule that all superheroes must have certain abilities, but wil have different behaviors.
+        - How they save the day, is up to them.
+
+
+     ** Need to continue with Interface
+        - Working with interface
+        - interface vs abstract
+
+    ** Exercise Completed
+
+
+    KENNETH LECTURE:
+        - Show the example while lecturing.
+        - Have fun examples
+            character, wizards, warriors

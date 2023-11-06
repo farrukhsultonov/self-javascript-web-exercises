@@ -1,0 +1,318 @@
+Inheritance and Polymorphism
+
+* So for this lesson we will be discussing 2 OOP concepts
+
+Today's Agenda:
+    - Inheritance
+        - Extending Class
+        - Overriding
+    - Access Modifiers
+    - The SUPER keyword
+    - Polymorphism
+    - The FINAL keyword
+
+
+Inheritance:
+    ? What does it mean when you inherit something?
+        - When you receive an item from its former owner.
+    - Inheritance:
+        - An object-oriented principle where a class is extended or inherit fields from another class.
+    - We call these classes subclasses, and superclasses
+        - subclasses are the extend classes that inherits the properties
+            - Think of it being a child class
+        - superclasses and the one that inherited.
+            - Think of it as a parent class
+
+    - Quick Example:
+        Employee:
+            - ID
+            - Name
+            - Salary
+
+            * Now let say we wanted to represent a programmer in a company in code.
+
+        Programmer:
+            - ID,
+            - Name
+            - Salary
+            - Bonus
+            - Special skills
+
+            * The programmer would also have an ID, name, and salary, but they might also have a bonus and special skills (different languages they know)
+            * We could create a new class that has the properties of ID, Name, Salary or we can 'Inherit' these properties.
+
+            Programmer extend Employee:
+               - ID, Name, Salary
+               - Bonus
+               - Special Skills
+
+    Benefits of Inheritance:
+        ? Why would we use Inheritance ?
+            - Avoiding duplication code in two different places
+            - Changes we make in the Superclass (Parent) will automatically affect all subclasses (Child)
+                - IMPORTANT: this is not true child to parent.
+                - Not all employees are programmers
+            - When we start building bigger projects, we will have one parent classes that have common properties and then other classes that can build upon the superclass (parent).
+
+
+    How it works? (Extending Class)
+        - To get started with inheritance you have to have one parent class and one child class
+        - When we want to inherit, we will use the keyword 'extends' with the subclass calling to the superclass.
+        - this will allow us to inherit all the fields from the superclass (parent)
+
+
+    *** EXAMPLE: Basic extend ***
+        * Create a package
+        * Create an Employee Class
+        * Create an Programmer class
+        * Create a main
+
+
+        *Employee:
+            public void sayHello() {
+                System.out.println("Hello, world!");
+            }
+
+        *Programmer extends Employee:
+             public void doWork() {
+                System.out.println("Work, work...");
+             }
+
+        * MAIN method:
+            Programmer coder = new Programmer();
+            coder.sayHello();
+            coder.doWork();
+
+
+    Overriding:
+        - Overriding is when you define a method inside of the subclass (child) with the same name, return type, and parameter as in your superclass (Parent)
+        - This is allowing subclasses to have its own implementation of a method.
+        - Useful when you want to customize your own method for a specific class and allows your to be more flexible.
+
+        EXAMPLE:
+            * First show how it runs before the edits.
+            * In programmer class, create a sayHello()
+
+            Programmer:
+                public void sayHello(){
+                        System.out.println("Welcome programmer! Lets get coding.");
+                }
+
+    Access Modifiers:
+        - Private, Protected, Public
+        - Public:
+            - Free to do what it wants and capable to go anywhere
+            - Accessible anywhere in the Java program
+            - can be accessed from anywhere.
+        - Protected:
+            - Fields that are protected are accessible within the same class, and within a Subclass and classes within the same package.
+            - Used when you want to provide access to subclasses, but not to classes outside the package.
+            - Accessible within the class, subclass, and package.
+        - Private:
+            - Only accessible only within the same class.
+            - not visible on any other classes.
+            - Used to encapsulate the internal details of a class and enforce data hiding.
+            - Accessible only within the class itself.
+
+
+    The 'super' Keyword:
+        - 'Super' keyword is used to access fields and methods of the superclass (parent) when they have the same name as properties in the subclass (Child)
+        - The 'super' keyword allows us to access a superclasses method and constructor within a subclass.
+        - used to notify you that the property/method is coming from the superclass (Parent)
+
+    *** Basic Example: ***
+
+    *Employee:
+        //-- Private first, then change to protected
+        private String name;
+
+        //Constructor
+        public Employee(String name){
+            this.name = name;
+        }
+
+
+        protected void holla(){
+            System.out.println(name + " AAAAYYYYYOOO ");
+        }
+
+    *Programmer:
+        public Programmer(String name) {
+            super(name);
+        }
+
+
+        public void greetings(){
+            // Can add super.holla()
+            holla();
+            System.out.println(" This is the new coder, "+ name);
+        }
+
+    *MAIN:
+        Programmer lulu = new Programmer("lulu");
+
+        //-- When Ran private
+        //      Error: name has private access in Employment.Employee
+        //  Go Change name into protected.
+        lulu.holla();
+
+
+
+
+
+
+   *** EXAMPLE: An Employee and Programmer ***
+
+        Employee:
+            //-- Properties
+            private int id;
+            private String name;
+            protected int salary;
+
+            //--Constructor
+            public Employee(int id, String name, int salary){
+                this.id = id;
+                this.name = name;
+                this.salary = salary;
+            }
+
+            //Getters
+            public int getId(){
+                return  this.id;
+            }
+
+            public String getName(){
+                return this.name;
+            }
+
+            public int getSalary(){
+                return this.salary;
+            }
+
+            //-- Method
+            public String currentStatus(){
+                return "Current Status: I am Hired!";
+            }
+
+            //-- Protected Method
+            protected String greetings(){
+                return "Welcome to the Team!";
+            }
+
+        Programmer:
+             //Field
+             private int bonus = 5_000;
+
+             //-- constructor with SUPER keyword
+             public Programmer(int id, String name, int salary, int bonus){
+                 super(id, name, salary);
+                 this.bonus = bonus;
+             }
+
+             //-- Programmers Get bonus Annually
+             //   Notice an error appears
+             //   This happens because our salary is private.
+             //   Once changed to protected look at error go away.
+             //   Add super.salary
+             //      Notify you that the property is coming from the superclass (Parent)
+             public int getAnnualBonus(){
+                 return super.salary + bonus;
+             }
+
+
+             //Override
+             public String currentStatus(){
+                 return super.greetings() + "\nCurrent Status: I am a programmer";
+             }
+
+
+        Main:
+            Programmer lucy = new Programmer(1, "lucy", 65_000,5_000);
+
+            System.out.println("ID: "+lucy.getId());
+            System.out.println("Name: "+lucy.getName());
+            System.out.println("Salary: $"+lucy.getSalary());
+            System.out.println(lucy.currentStatus());
+
+            System.out.println();
+
+            System.out.println("Congrats!!! Time for your annual Bonus");
+            System.out.print("Bonus: $");
+            System.out.println(lucy.getAnnualBonus());
+
+            System.out.println();
+
+            System.out.print("Back to reg pay: $");
+            System.out.println(lucy.getSalary());
+
+
+( BREAK TIME)
+
+Polymorphism
+    ? What does morph mean ?
+        - To transfer from one object into another
+    Polymorphism:
+        - The ability for an object or function to take many forms
+        - One of the Object-Oriented Principles
+        - that allows us to treat different objects in a uniform way, even when the object belongs to different classes but share a common superclass.
+        - Meaning methods or properties defined in a superclass can work with objects of its subclasses.
+
+        - Polymorphism treats objects of different classes that have a common superclass as if they were instances of that superclass.
+
+        - One form of Polymorphism is when we method overriding.
+        -  Another form is method overloading
+
+
+    EXAMPLE:
+        - We have been applying this principle without us really knowing.
+        * Lets take a look at our previous example with employee, programmer, and main.
+        * Both employee and Programmer have a common currentStatus() method, but act differently
+
+        * Now lets use Polymorphism:
+            * inside of our MAIN
+
+        MAIN:
+            Outside of Main Method:
+                public static void doWork(Employee e) {
+                    System.out.println(e.currentStatus());
+                }
+
+            Main Method:
+                //-- Polymorphism
+                Employee one = new Employee();
+                Employee two = new Programmer();
+
+
+                System.out.println("Poly:");
+                doWork(one);
+                doWork(two);
+
+        Employee:
+            //Empty Constructor
+            public Employee() {}
+
+        Programmer:
+            // Empty Constructor
+            public Programmer() {super();}
+
+
+
+
+    EXAMPLE:
+        MAIN:
+            //-- Polymorphism Example #2
+            System.out.println("Poly Example #2");
+            Employee susie = new Employee(2, "susie", 65000);
+            Employee chris = new Programmer(3, "chris", 70000, 6000);
+
+            System.out.println(susie.currentStatus());
+            System.out.println(chris.currentStatus());
+
+
+The 'final' Keyword
+    - It is used to prevent reassignment
+    - can be used to prevent inheritance or overriding
+
+
+
+

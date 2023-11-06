@@ -1,0 +1,216 @@
+File IO
+
+TOday's Agenda:
+    - Absolute vs Relative Paths
+    - Working with Files
+        - Paths
+        - Files
+    - Common Path and File Methods
+    - Reading and Writing Files
+
+
+- The Goal for this lesson is to learn how to read from and write to files with Java
+- Before we start lets talk about what a file and Path is:
+    - File:
+        - A discrete container for data on a storage device
+        - These data containers can encompass a wide range of information, including text, images, videos, or other difital content.
+    - Path:
+        - The location of a file in a filesystem,
+        - Represents the specific locaiton of a file within the hierarchical structor of a fileystem.
+        - Think of it like the address that guides us to a file exact locaiton.
+        - Path can be categorized into two main types:
+            - Absolute Paths
+            - Relative Paths
+
+__Absolute vs Relative Paths:
+    Key Path Components:
+        '/'
+            When a path begins with /, it refers to the filesystem's root directory. If / is not at the start of a path, it's used to separate directories within the path.
+        '.'
+            Denotes the current directory.
+        '..'
+            Represents the parent directory.
+
+    2 Type of Paths:
+        1.) Absolute Paths:
+            - specified from the filesystem's root directory, prividing an unambiguous location for a file or directory.
+            - These paths alwasy lead to the same locaiton, regardless of the current working directory.
+            - These paths remain consistent no matter where your current working directory is.
+            * Thinking of it like giving someone the full adress to a house.
+            * They start from the very beginning, which is the root and go all the way to the destination.
+            * like saying 'No matter where you are, you'll always find this place if oyu follow the directions.
+            * These paths are like GPS coordinates for your computer
+                Example:
+                    '/Users/codeup/IdeaProjects/java-exercises/data/data.txt'
+        2.) Relative Paths:
+            - are specified in relation to the current working directory.
+            - The logic of a relatie path depends on the context of your current working directory.
+            - The following is considered relative because their accuracy depends on the current working directory.
+            - if the working directory changes, the meaning of these paths changes as well.
+            * Imagine your in a particuler directory (Ex. java-exercises directory)
+            * Relative paths are like giving directions starting from where you are.
+            * If you are in "java-eercises" folder and you say "data/data.txt", it means you are looking for a file named "data.txt" inside a folder named "data" in the sam place where you are.
+            * If we were like in the "IdeaProjects" folder, the same "data/data.txt" would lead you to a different locaiton because it depends on where you start.
+            * Relative Paths is like giving firections from your current location, and they change if you move to a different place.
+                Example:
+                    'data/data.txt'
+                    '.data/data.txt'
+                    '../../Documents/important-stuff.txt'
+
+__Working with Files:
+    - The standard library provides a rich set of classes and interfaces for handling fiels and paths, primarly found in the 'java.io' and 'java.nio' packages.
+    - Today we will work with the fundamental components for working with files in Java
+
+    Paths:
+        - represents the location of files or directories
+        - In java we have two components related to paths.
+
+        Path Interface:
+            - This interface defines an object that represents a file path
+            - Many file operations in Java expect a 'Path' as an argument, making it a core concept in file manipulation.
+            - One key strengths is abstracting away differences between various filesystem path notations, where your are working on Windows, macOS, or other platforms.
+            * The Path interface helps us represent files paths in Java.
+            * Many file operations in Java need a Path as input. It's like the address of a file.
+            * It is good at hiding the difference between how file paths are written on different systems (Windows or macOS), Making your code work on any platform.
+
+        Paths Class:
+            - The 'Path' class provides static methods for obtaining file paths.
+            - you can use these methods to create objects that implement that 'Path' interface.
+            - It's valuable utility for constucting and manipulating paths in a platform-agnostic manner.
+            * The Path class gives you helful tools for getting file paths.
+            * It helps you make Path objects, which are like the smart addresses we talked about.
+            * It wokrs the same way on any computer. Does not care if your on windows or macOS, its universal translator for file paths.
+
+    Files:
+        File Class:
+            - The 'File class represents an individual file
+            - Allows you to work with file-related operations, such as reading, writing, and checking file properties.
+            * It helps us do things with files, like reading them, writing to them, and checking details about them.
+
+        Files Class:
+            - the 'Files' class contains a range of static methods for interacting with files.
+            - These methods are handy for common file operations, including copying, moving, deleting, and checking file attributes.
+            * The Files class is our toolbox full of special tools for working with files.
+            *  It has handy methods to do common file tasks, such as copying files, moving them around, deleting them, and checking facts about them. It's like a Swiss Army knife for file operations.
+
+__Common Path and File Methods:
+    - Handling Errors (IOException):
+        (When you work with files, things can go wrong. These methods may throw an error called "IOException," and you need to be ready to deal with it in your code.)
+        (" It's like an alarm bell that goes off when something goes wrong. )
+
+    (Best to run Example in IntelliJ)
+
+    //--  1. Created a path (an address for a file or directory)
+            - Why create a path:
+                - Helping the program locate the files
+                - Helps us file file in different operating systems.
+                - Helps you ensure that your code consistently refers to the same files and directories.
+                - especially importatnt when collaborating on projects or running your code on different computers.
+
+        // Create a Path for a single file
+        Path filePath = Paths.get("example.txt");
+        System.out.println(filePath);
+
+        //Create a Path for a directory and file inside it.
+        Path directoryPath = Paths.get("myFolder");
+        Path fileInFolder = directoryPath.resolve("fileInFolder");
+
+        // We created a Path for a file called "example.txt" and a Path for a directory called "myFolder" with a file inside it called "fileInFolder.txt"
+
+    //-- 2. Checking if something Exists:
+
+        // we are checking to see if 'example.txt' exist or NOT exist
+        boolean doesExampleFileExist = Files.exists(filePath);
+        System.out.println("Does '"+filePath+"' exist: "+doesExampleFileExist);
+        boolean doesExampleFileNotExist = Files.notExists(filePath);
+        System.out.println("Does '"+filePath+"' not exist: "+doesExampleFileNotExist);
+
+        // We are checking to see if the directory 'myFolder' exist
+        boolean doesDirectoryPathExist = Files.exists(directoryPath);
+        System.out.println("Does '"+directoryPath+"' exist: "+doesDirectoryPathExist);
+        boolean doesDirectoryPathNotExist = Files.notExists(directoryPath);
+        System.out.println("Does '"+directoryPath+"' not exist: "+doesDirectoryPathNotExist);
+
+    //-- 3. Create a File or Directory:
+
+
+        // Create a file
+        Path newFilePath = Paths.get("newFile.txt");
+        //Create a directory
+        Path newDirectoryPath = Paths.get("newFolder");
+
+        // Create
+        // An error will occur if you do not 'throws IOException' with main
+        // IntelliJ will request to fix it.
+        // This is going to create a new file inside your directory.
+        Files.createFile(newFilePath);
+        Files.createDirectories(newDirectoryPath);
+
+    //-- 4. Creating a directory and file:
+
+        //Create a storage for the directory and filename
+        String directory = "data";
+        String filename = "info.txt";
+
+        Path dataDirectory = Paths.get(directory);
+        // Placing the file inside the directory
+        Path dataFile = dataDirectory.resolve(filename);
+
+        if(!Files.exists(dataDirectory)){
+            Files.createDirectories(dataDirectory);
+        }
+        if(!Files.exists(dataFile)){
+            Files.createFile(dataFile);
+        }
+
+
+Reading and Writing Files:
+    - We are goin to discuss how to read the contents of a file and write data to a file in Java.
+
+    (Best to run Example in IntelliJ)
+
+     //-- #1 Writing to a file.
+         List<String> groceryList = Arrays.asList("coffee", "milk", "sugar");
+         // Create a file inside the data directory
+         Path groceriesPath = Paths.get("data", "groceries.txt");
+         // Writing on the file path with the grocery list.
+         Files.write(groceriesPath, groceryList);
+
+
+     //-- #2 Reading and Printing each line
+         List<String> grocerList = Files.readAllLines(groceriesPath);
+
+         for(int i = 0; i < grocerList.size(); i++){
+             System.out.println((i + 1) + ": " + grocerList.get(i));
+         }
+     //-- #3 How to Add to an existing File:
+         // This will include eggs without removing the previous items.
+         Files.write(
+                 Paths.get("data", "groceries.txt"),
+                 Arrays.asList("eggs"),
+                 StandardOpenOption.APPEND
+         );
+
+     //-- #4 Updating a File:
+         //   - You can replace or modify specific lines in a file
+         // You can read the file, make changes, and then write the updated content back to the file.
+
+         // Replacing "milk" with "cream":
+
+         List<String> lines = Files.readAllLines(Paths.get("data", "groceries.txt"));
+         // Create an empty arraylist
+         List<String> updatedList = new ArrayList<>();
+
+         for(String line :lines){
+             // If milk, then replace with cream
+             if (line.equals("milk")){
+                 updatedList.add("cream");
+                 continue;
+             }
+             // All other items will be added to new array list.
+             updatedList.add(line);
+         }
+
+         Files.write(Paths.get("data", "groceries.txt"), updatedList);
+
+\\EXERCISE TIME

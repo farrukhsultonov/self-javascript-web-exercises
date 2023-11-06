@@ -1,0 +1,209 @@
+Strings
+
+Today's Agenda:
+    - String Definition
+    - Immutability and Concatenation
+    - Comparing Strings
+    - String Comparison Method
+    - String Manipulation Methods
+
+
+String Definition:
+    - A string is letters, numbers, and special characters strung together.
+    - String are objects, not primitives.
+    - This means that string variables are reference type, not primitive type, and that is why '==' operator does not behave as expected when comparing strings.
+    - even though they had the same value, they were two distinct objects
+        - one was created from a string literal
+        - the other was created by the scanner reading what the user typed into
+
+Immutability and Concatenation
+    - String are immutable
+        Meaning: Once a string is created, it cannot be changed
+
+    Example:
+          String s="Sachin";
+           s.concat(" Tendulkar");//concat() method adds the string at the end
+           System.out.println(s);//will print Sachin because strings are immutable objects
+
+    - Concatenation:
+        - The '+' operator performs string concatenation when one of its operands is a string
+        - Another way is with the 'concat()' on any string object
+
+    Example:
+        String message = "Hello";
+        System.out.println(message); // prints "Hello"
+        message = message + " World!";
+        System.out.println(message); // prints "Hello, World!"
+
+    ** Now you may think the example above may disprove string is immutability thinking we changed the value of the message variable, However your wrong. When we do a string concatenation, we are not modifying the original string, rather we are creating a new String object, updating the variable message to the new String object instead of the old one.
+
+
+Comparing Strings
+    - Since strings are not primitive data types but objects, we must compare them rather than the relational operators
+    - If you try to compare the two String objects, it will not work when using '=='
+    - The two methods that we should use when comparing String objects:
+        - '.equals()'
+        - '.equalsIgnoreCase()'
+
+    Example:
+
+     DON"T DO:
+        if ("I am a string" == "I am a string") {
+            System.out.println("Strings are equal");
+        }
+
+     DO THIS INSTEAD:
+        if ("I am a string".equals("I am a string")) {
+            System.out.println("Strings are equal");
+        }
+
+
+String Comparison Methods:
+    - These are some common methods, we use to compare strings
+    - All of the methods here will return 'True' or 'False'
+
+    '.equals()'             Case-Sensitive, Determine if two strings have the same value
+    '.equalsIgnoreCase()'   Not Case-Sensitive, Determine if two strings have the same value
+    '.startsWith()'         Case-Sensitive, If one String starts with another
+    '.endsWith()'           Case-Sensitive, If one string ends with another
+
+    EXAMPLE:
+
+        String input = "Codeup Rocks!";
+
+        input.equals("codeup rocks!"); // false
+        input.equals("Codeup Rocks!"); // true
+
+        input.equalsIgnoreCase("codeup rocks!"); // true
+        input.equalsIgnoreCase("Codeup Rocks!"); // true
+
+        input.startsWith("codeup") // false
+        input.startsWith("Codeup") // true
+
+        input.endsWith("rocks") // false
+        input.endsWith("rocks!") // false
+        input.endsWith("Rocks!") // true
+
+
+String Manipulation Methods:
+
+    .charAt()
+        - return a char value at the given index number
+        - Starts at 0 and goes to string.length-1
+        - If a negative number or greater than the string length, you will return "StringIndexOutOfBoundsException"
+
+        Example:
+             String name="Supercalifragilisticexpialidocious";
+             char ch_0=name.charAt(0);//returns the char value at the 0 index
+             char ch_4=name.charAt(4);//returns the char value at the 4th index
+             char ch_last=name.charAt(name.length()-1);//returns the char value at the last index
+             System.out.println(ch_0); // 'S'
+             System.out.println(ch_4); // 'r'
+             System.out.println(ch_last); // 's'
+
+    .indexOf()
+        - Returns the index position within this string of the first occurrence of the specified char/string
+        - Will Receive a -1 if char does not occur
+
+        Example:
+             String example = "If you knew you would know my story, word by word";
+             int index_1 = example.indexOf("you");
+             int index_2 = example.indexOf("l");
+             int index_3 = example.indexOf("z");
+             int index_4 = example.indexOf("you",4); //the index position to start the search from
+             System.out.println(index_1);    // Returns 3
+             System.out.println(index_2);    // Returns 19
+             System.out.println(index_3);    // Returns -1
+             System.out.println(index_4);    // Returns 12
+
+    .lastIndexOf()
+        - Return the index position within a string of the last occurrence of the specified char/string
+        - Will return -1 if char does not occur
+
+        Example:
+            final String EXAMPLE_LAST_INDEX_OF = "If you knew you would know my story, word by word";
+            int index_01 = example.lastIndexOf("you");
+            int index_02 = example.lastIndexOf("l");
+            int index_03 = example.lastIndexOf("z");
+            int index_04 = example.lastIndexOf("you",6); //the index position to start the search from
+            System.out.println(index_01);    // Returns 12
+            System.out.println(index_02);    // Returns 19
+            System.out.println(index_03);    // Returns -1
+            System.out.println(index_04);    // Returns 3
+
+    .length()
+        - Return the number of characters in a string
+
+        Example:
+            String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            System.out.println(txt.length());
+
+    .replace()
+        - searches a string for a specified character, and return a new string that replaces every occurrence of a given character with a new character
+        - return a string by replacing the old Char with a new Char
+        - Case-sensitive
+
+    replace(char oldC, char newC)
+
+        Example:
+            String sentence = "The Sky is grey";
+            System.out.println("Original: "+sentence);
+            System.out.println("Replaced: " + sentence.replace("grey", "blue"));
+            System.out.println("Replaced: " + sentence.replace("T", "t"));
+            System.out.println("Replaced: " + sentence.replace("sky", "ocean"));    //Not Work
+            System.out.println("Replaced: " + sentence.replace("Sky", "ocean"));
+            System.out.println("Original: "+sentence);
+
+        BONUS:
+            .replaceAll()
+            .replaceFirst()
+
+
+    .substring()
+        - returns part of a string
+        - We pass a beginning index and a end index (optional)
+        - The Beginning index will be included, the end index will NOT be added
+        - Returns 'StringIndexOutOfBoundsException' when
+            - Start index is negative value
+            - End Index is lower than the starting index
+            - Either starting or ending index is greater than the total number of characters present in the string.
+
+
+        Example:
+            String s1="Welcome to the Darkside!";
+            System.out.println(s1.substring(11,14)); //returns " the"
+            System.out.println(s1.substring(3,s1.length()-1)); //returns come to the Darkside
+            System.out.println(s1.substring(3)); //returns come to the Darkside!
+            System.out.println(s1.substring(2,-1)); //returns ERROR
+
+
+    .toLowerCase()
+        - returns the string in lowercase
+
+        Example:
+            String upperCaseString = "THIS IS ME BEING LOUD!";
+            System.out.println("Original: "+upperCaseString);
+            System.out.println("Speaking Softly: "+upperCaseString.toLowerCase());
+
+    .ToUpperCase()
+        - Returns the string in uppercase
+
+        Example:
+            String speakUp = "what you just say to me?";
+            System.out.println("Original: "+ speakUp);
+            System.out.println("Speaking Up: "+ speakUp.toUpperCase());
+
+    .trim()
+        - Eliminates leading and trailing spaces
+
+        Example:
+            String noSpace = "     Give Me Room     ";
+            System.out.println("Original: "+noSpace);
+            System.out.println("No Space: "+noSpace.trim());
+
+
+    BONUS:
+    System.out.println("No Space & Replace: "+ noSpace.trim().replace("Give", "Hug").replace("Room", "NOW!"));
+
+
+

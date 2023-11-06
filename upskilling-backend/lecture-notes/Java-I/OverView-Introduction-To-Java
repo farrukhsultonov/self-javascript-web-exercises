@@ -1,0 +1,206 @@
+Overview & Intro to Java
+
+
+Today's Agenda:
+    - Overview
+    - History
+    - Editions
+    - Components of Java
+    - Java Compared to Javascript
+    - Compiling and Interpreting Code
+    - Hello World
+    - Exercise Time
+
+
+/** Additional Notes: Kenneth H.
+    - Allow students time to look over the curriculum
+    - Mars Rover is built on Java
+    - What is IoT (Internet of things)
+        - what can we build with it?
+    - Description of all types of Java
+
+
+
+
+
+
+OverView:
+    - Read the Overview from the curriculum to students
+
+History:
+    - Starting in 1991 called the Green Project
+    - The Goal: was to create a language that is adaptable multiple operating systems.
+    - The Original Name was Oak
+        - Based on the Oak tree that was outside the windows of the devs office
+
+    - But due to copyright issues it was changed to 'Java'
+        - All because the amount of coffee the developers were drinking
+    - Which created a tagline: "Write Once, Run Everywhere"
+
+    Java was first released in 1995 by James Gosling
+
+    - When First created java was upgraded yearly.
+    - By 1998 Java SE (Standard Edition) & Java EE (Enterprise Edition)
+    - By 2004, They released Java 5.0,c
+        - from here is what you see now of Java 5, Java 6, Java 7, and so on.
+    - By 2006 - 2010, You can see that there was a hold and not must updates was created
+    - By 2010, Oracle Bout Sun Microsystems
+        - Now we will see an increase of updates
+    - On 2014, Java SE 8 was created
+        - Which is still popular as of 2019
+    - On sept 2018, Java SE 11 (LTS)
+        - Long term support versions
+        -  Oracle plan was that every 3 years they will release a new long term support version
+        - This version will maintain support for five years
+        - Then extended support available for 3 years
+    - Java 12, 13, 14, 15 ,and 16 were rapid release versions
+        - They wont get long term support, just only six months till the next one is released
+
+
+Editions:
+    - Java runs everywhere and can be very adaptable
+    - What are some Java programs we can build?
+        - Web Application
+        - Desktop application
+        - Web Servers
+        - Embedded Systems
+        - And More
+   ?What is the editions?
+        - Java SE
+            - The core functionality
+            - everything from the basic types and objects to high level glasses that are used for networking, security, database access, GUI development and XML parsing
+        - Java EE
+            - is built on top of Java SE
+            - provides an API and runtime environment for developing and running large scale applications
+            - Containing Servlets, JSP, and JDBC libraries
+            - We will jump into this in Java III
+        - Java FX
+            - Set of graphic and media packages that enable developers to design create test and deploy great applications
+            - display information in a high-performance modern user interface that features audio, video, graphics, and animation.
+        - Java ME (Micro Edition)
+            - designed for resource-constrained devices like e-book readers, Blu-ray Disc players, Voice Over IP telephones, televisions, printers, residential sensors and more
+        - Android
+
+Components of Java:
+    - What is Java?
+        - A Object-oriented, meaning you are designing everything as an object
+        - Allowing us to build code in small chunks
+        - making it easy to debug and maintain over time.
+        - Java is portable
+        - Allowing us to compile once and then run on multiple operating systems.
+
+    - An example is our IntelliJ (Eclipse, Visual Studios) is an IDE (integrated development environment) that help us develops code.
+      - you need to configure the JDK within the IDE
+    - IntelliJ has the JDK (Java development Kit) which is necessary to create and build Java applications
+        - you'll want to have the JDK installed because it gives you the tools to write, compile, and test your Java code.
+            - The JDK contains the JRE (Java Runtime Environment)
+            - JRE includes the Java Virtual Machine (JVM), class libraries, and other runtime components required to run Java applications.
+            - When a user wants to run a Java program on their machine, they need the JRE installed
+                JRE is all that's required to run Java applications
+
+       - SUMMARY, JDK includes JRE and is required to create Java applications. Where JRE, is needed by end users who want to RUN java application on their systems.
+
+
+**What is compiled vs interpreted?
+
+
+Comparing Java and Javascript:
+    - Even though they names seem similar, they are not related at all.
+    - Both have different purposes and different principles.
+    - Java
+        - compiled into bytecode, which is executed by the Java Virtual Machine (JVM) at runtime.
+        - Java applications can run on any platform that has a compatible JVM
+        - Java has different editions, Standard edition, Enterprise Edition, Micro Edition
+
+        - widely used for building a wide range of applications, including desktop software, web applications, mobile apps (Android), server-side applications, and more.
+        - more rigid and strongly-typed syntax
+        - you need to declare the data type of a variable before using it, and the type cannot change during runtime
+        - a class-based object-oriented programming paradigm
+        - used for a wide range of applications, including enterprise software, Android app development, backend services, and more.
+    - Javascript
+        -  JavaScript code is interpreted by web browsers directly.
+        - JavaScript primarily runs within web browsers
+
+        - enables interactivity in web pages and web applications. It runs directly in web browsers and is responsible for behaviors of the site.
+        -JavaScript has a more flexible and loosely-typed syntax.
+        - JavaScript uses dynamic typing, allowing variables to change their type during runtime.
+        - a prototype-based object-oriented
+        - mainly used for enhancing web interactivity, creating browser-based games, building web applications, and more
+
+    - Both are broadly portable,
+        - Java through its virtual machine
+        - JS runs on various browser.
+
+
+Compiling and Interpreting Code:
+
+    1. All code is defined in classes.
+        - Classes are defined in source code files with a '.java' extension
+    2. The source code is compiled
+        - The compiler 'javac' compiles the java code into bytecode
+        - We wont interact with it directly, We use IntelliJ (an IDE) automates it for you
+        - When this runs, you'll get an output of a file with an extension of '.class'
+            - This file contains JVM Bytecode
+        - Also when this runs, you will encounter (if any) compile-time errors.
+            - These errors indicates something is wrong and that we need to fix before compiling the code.
+                Example: Syntax error
+    3. Once Compiled, the bytecode runs on the JVM
+        - The JVM interprets the bytecode, turning it into 'Machine Code'
+        - When this happens, you may encounter run-time errors,
+            - This occurs when a program successfully compiles but fails to execute
+            - These are the errors which are not detected by the compiler and produce wrong results.
+            - They prevent the code from complete execution.
+
+
+****?? Kenneth Notes:
+    - What is public static void?
+        - wait from static for a future lesson, but can discuss public, private, protected.
+
+
+
+
+Example of Compiling and Interpreting:
+    Syntax and  Hello World:
+       1. Open Sublime
+       2. Create a main method for your Hello World
+
+               public class HelloWorld {
+                  public static void main(String[] args) {
+                      System.out.println("Hello World!");
+                  }
+              }
+
+               - Every Java program has to have a class, All java must be inside a class
+               - The Main function is the entry point to our program.
+               - Everything from the public class and the main function is what you need in order to make your application run.
+               - Everything inside of your main method is what make your application unique.
+               - So with javascript we had console.log, well with Java we have System.out.println()
+
+       3. Save as HelloWorld.java
+       4. Show the location in your IdeaProjects
+            - Also show that there is no Class yet
+   Compiling The Java Code:
+   - Unlike other languages, Java must be compiled before it runs
+       4. Open terminal
+       5. 'ls' -> 'cd IdeaProjects' -> 'ls'
+       6. 'javac HelloWorld.java' in terminal
+       7. go to IdeaDirectory and show class created
+       8. Go to sublime -> command+o -> locate class and open
+            - This is Bytecode
+    Run Application in Terminal:
+    - Will be calling the .class (Bytecode) without the .class extension
+        9. Terminal: java HelloWorld
+
+    BONUS:
+        - If i was to go back and change something in my .java file and go back to the terminal and run it
+        - What will it show when i run it?
+        - Why does this happen?
+            - You will need to re-compile the program to get the latest version.
+        Example:
+            10. 'javac HelloWorld.java' in terminal
+            11. java HelloWorld
+
+    - This can be quite frustrating doing it manually like this, and this is why we have a IDE. (intelliJ)
+
+
+
