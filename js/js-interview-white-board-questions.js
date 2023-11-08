@@ -1,5 +1,23 @@
 // Technical interview questions
 //
+// ***************************** HTML technical questions ****************************************
+// 1. What is the role of the head tag in an HTML document?
+// Ans: head tag contains machine-readable metadata about the page and typical sub elements including the title, meta tags, and stylesheet.
+//
+// -----------------------------------------------------------------------------
+//
+// 2. What is an element in HTML?
+// Ans: An element in HTML is a set of tags that define a specific part of a web page. It consists of a start tag, content, and an end tag.
+//
+//
+// ***************************** CSS technical questions ****************************************
+//
+// 1. Can you describe the CSS box model?
+// Ans: The CSS Box model is used for the purpose of affecting the layout of a page through properties that wrap around the content of each element including its margin, border, and padding.
+//
+//
+// ***************************** JavaScript technical questions ****************************************
+//
 // 1. What are the basic data types of JavaScript?
 // Ans: There are total 7 basic data-types supported by JavaScript
 // Boolean - represents true and false
@@ -28,6 +46,8 @@
 //
 // "== (called loose equal) is used to compare two variables regardless of the variable's data type.
 // === (called strict equal) is used to compare two variables, but this will check strict type, which means it will check the data type and compare two values."
+
+// “==” checks only for equality in value, whereas “===” is a stricter equality test and returns false if either the value or the type of the two variables are different.
 //
 // -----------------------------------------------------------------------------
 //
@@ -64,9 +84,6 @@
 // Answer:
 // * 		A function declaration is defined with the function keyword and is hoisted, meaning it can be used before its declaration in the code.
 // * 		A function expression is created by assigning a function to a variable and is not hoisted.
-//
-// ----
-// “==” checks only for equality in value, whereas “===” is a stricter equality test and returns false if either the value or the type of the two variables are different.
 //
 // -----------------------------------------------------------------------------
 //

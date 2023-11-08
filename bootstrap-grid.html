@@ -1,89 +1,227 @@
-<!--Grid System-->
-
-<!--Bootstrap comes with a grid system, which helps us construct our own custom, responsive layout-->
-
-<!--the grid system works upon a couple of really important concepts... -->
-<!-- the first thing is that it only works inside a container. we have to have a container class anytime we want to use the bootstrap grid-->
-<!--the next thing is that we need to create a row using the class of row.-->
-<!--every row in bootstrap has 12 units of space/column.-->
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/bootstrap-grid.css">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-
-<!--this is from bootstrap documentation-->
-<!--https://getbootstrap.com/docs/5.1/layout/grid/-->
-
-
-
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-12 bg-primary">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col-lg-4 col-md-3 bg-warning">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col-lg-4 col-md-3 bg-success">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col bg-primary">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col bg-warning">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col bg-success">-->
+<!--            Column-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col">-->
-<!--      Column-->
+<!--    <div class="row row-cols-3">-->
+<!--        <div class="col bg-primary">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col bg-warning">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col bg-success">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col-12 bg-primary">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col-6 bg-warning">-->
+<!--            Column-->
+<!--        </div>-->
+<!--        <div class="col bg-success">-->
+<!--            Column-->
+<!--        </div>-->
 <!--    </div>-->
-<!--    <div class="col">-->
-<!--      Column-->
-<!--    </div>-->
-<!--    <div class="col">-->
-<!--      Column-->
-<!--    </div>-->
-<!--  </div>-->
 <!--</div>-->
 
 
 
-<div class="container">
-    <div class="row">
-        <div class="col bg-primary">
-            Column
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="col-lg-3 col-md-6">-->
+<!--            <p>Consectetur reprehenderit magnam nostrum quod reprehenderit. Inventore repellat eum facilis illum dolor doloribus, eius quibusdam suscipit delectus vitae. Explicabo beatae vitae quos laborum expedita hic, maiores ipsa eaque? Nobis repudiandae!</p>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3 col-md-6">-->
+<!--            <p>Elit rerum asperiores nostrum ipsum sint debitis et, quos harum. Ut reiciendis id dolorem dolorum ad ex in. Illo odit atque dolore corporis vero? Voluptatum cupiditate quisquam perspiciatis obcaecati neque.</p>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3 col-md-6">-->
+<!--            <p>Sit quibusdam dolorum delectus ducimus consequatur ullam cupiditate quia sit, laboriosam distinctio distinctio est blanditiis vitae laudantium dolore? Tempore doloremque aspernatur repellat consectetur sit vero velit possimus suscipit? Odit doloremque?</p>-->
+<!--        </div>-->
+<!--        <div class="col-lg-3 col-md-6">-->
+<!--            <p>Consectetur doloribus dolor quia iste sint! Totam suscipit possimus deserunt adipisci beatae? Mollitia explicabo voluptates hic delectus voluptates commodi necessitatibus perferendis. Rem ipsam itaque illo perspiciatis illo doloribus. Enim iste.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+<section class="row mt-5 bg-warning">
+    <section class="col-4 p-1">
+        <div class="card p-0">
+            <div class="card-body">
+                <h5 class="card-title">
+                    This is a card
+                </h5>
+                <div class="card-text">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, corporis, id!
+                        Consequuntur
+                        culpa, cupiditate debitis deleniti ducimus eligendi fugit impedit ipsa laboriosam magnam
+                        modi,
+                        pariatur quidem tempora veniam, voluptatibus. Reprehenderit.
+                    </div>
+                    <div>Adipisci amet autem consectetur, dolor dolore eaque fuga iure maxime nesciunt obcaecati,
+                        quae
+                        quaerat quam quisquam ut voluptas! Consectetur cum facere in numquam quas, quia quos sit
+                        soluta.
+                        Unde, voluptas!
+                    </div>
+                    <div>Architecto cum ducimus eligendi eveniet id modi nostrum optio quaerat, reiciendis
+                        voluptatem.
+                        Asperiores, assumenda ea earum ex facilis fugit labore nam odio perspiciatis, quaerat rem
+                        repellendus sint veritatis voluptatibus, voluptatum!
+                    </div>
+                    <div>Ab, asperiores at autem deserunt distinctio dolores error laudantium nihil omnis quia?
+                        Consequatur cupiditate, doloremque earum eius eveniet, iure natus nesciunt, numquam odio
+                        ratione
+                        recusandae sed temporibus velit vero voluptatem!
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success">Go To Place</button>
+            </div>
         </div>
-        <div class="col bg-warning">
-            Column
+    </section>
+    <section class="col-4 p-1">
+        <div class="card p-0">
+            <div class="card-body">
+                <h5 class="card-title">
+                    This is a card
+                </h5>
+                <div class="card-text">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, corporis, id!
+                        Consequuntur
+                        culpa, cupiditate debitis deleniti ducimus eligendi fugit impedit ipsa laboriosam magnam
+                        modi,
+                        pariatur quidem tempora veniam, voluptatibus. Reprehenderit.
+                    </div>
+                    <div>Adipisci amet autem consectetur, dolor dolore eaque fuga iure maxime nesciunt obcaecati,
+                        quae
+                        quaerat quam quisquam ut voluptas! Consectetur cum facere in numquam quas, quia quos sit
+                        soluta.
+                        Unde, voluptas!
+                    </div>
+                    <div>Architecto cum ducimus eligendi eveniet id modi nostrum optio quaerat, reiciendis
+                        voluptatem.
+                        Asperiores, assumenda ea earum ex facilis fugit labore nam odio perspiciatis, quaerat rem
+                        repellendus sint veritatis voluptatibus, voluptatum!
+                    </div>
+                    <div>Ab, asperiores at autem deserunt distinctio dolores error laudantium nihil omnis quia?
+                        Consequatur cupiditate, doloremque earum eius eveniet, iure natus nesciunt, numquam odio
+                        ratione
+                        recusandae sed temporibus velit vero voluptatem!
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success">Go To Place</button>
+            </div>
         </div>
-        <div class="col bg-success">
-            Column
+    </section>
+    <section class="col-4 p-1 offset-4">
+        <div class="card p-0">
+            <div class="card-body">
+                <h5 class="card-title">
+                    This is a card
+                </h5>
+                <div class="card-text">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, corporis, id!
+                        Consequuntur
+                        culpa, cupiditate debitis deleniti ducimus eligendi fugit impedit ipsa laboriosam magnam
+                        modi,
+                        pariatur quidem tempora veniam, voluptatibus. Reprehenderit.
+                    </div>
+                    <div>Adipisci amet autem consectetur, dolor dolore eaque fuga iure maxime nesciunt obcaecati,
+                        quae
+                        quaerat quam quisquam ut voluptas! Consectetur cum facere in numquam quas, quia quos sit
+                        soluta.
+                        Unde, voluptas!
+                    </div>
+                    <div>Architecto cum ducimus eligendi eveniet id modi nostrum optio quaerat, reiciendis
+                        voluptatem.
+                        Asperiores, assumenda ea earum ex facilis fugit labore nam odio perspiciatis, quaerat rem
+                        repellendus sint veritatis voluptatibus, voluptatum!
+                    </div>
+                    <div>Ab, asperiores at autem deserunt distinctio dolores error laudantium nihil omnis quia?
+                        Consequatur cupiditate, doloremque earum eius eveniet, iure natus nesciunt, numquam odio
+                        ratione
+                        recusandae sed temporibus velit vero voluptatem!
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success">Go To Place</button>
+            </div>
         </div>
-    </div>
-</div>
-
-
-<br>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 bg-primary">
-            Column
+    </section>
+    <section class="col-4 p-1">
+        <div class="card p-0">
+            <div class="card-body">
+                <h5 class="card-title">
+                    This is a card
+                </h5>
+                <div class="card-text">
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, corporis, id!
+                        Consequuntur
+                        culpa, cupiditate debitis deleniti ducimus eligendi fugit impedit ipsa laboriosam magnam
+                        modi,
+                        pariatur quidem tempora veniam, voluptatibus. Reprehenderit.
+                    </div>
+                    <div>Adipisci amet autem consectetur, dolor dolore eaque fuga iure maxime nesciunt obcaecati,
+                        quae
+                        quaerat quam quisquam ut voluptas! Consectetur cum facere in numquam quas, quia quos sit
+                        soluta.
+                        Unde, voluptas!
+                    </div>
+                    <div>Architecto cum ducimus eligendi eveniet id modi nostrum optio quaerat, reiciendis
+                        voluptatem.
+                        Asperiores, assumenda ea earum ex facilis fugit labore nam odio perspiciatis, quaerat rem
+                        repellendus sint veritatis voluptatibus, voluptatum!
+                    </div>
+                    <div>Ab, asperiores at autem deserunt distinctio dolores error laudantium nihil omnis quia?
+                        Consequatur cupiditate, doloremque earum eius eveniet, iure natus nesciunt, numquam odio
+                        ratione
+                        recusandae sed temporibus velit vero voluptatem!
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success">Go To Place</button>
+            </div>
         </div>
-        <div class="col-md-8 bg-warning">
-            Column
-        </div>
-        <div class="col-sm-3 bg-success">
-            Column
-        </div>
-        <div class="col-sm-1 bg-warning">
-            Column
-        </div>
-    </div>
-</div>
+    </section>
+</section>
+</main>
 
 
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
