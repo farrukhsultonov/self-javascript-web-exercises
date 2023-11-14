@@ -1,0 +1,53 @@
+@font-face {
+    font-family: NewRodin;
+    src: url("../media/FOT-NewRodin Pro M.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: NewRodin;
+    src: url("../media/FOT-NewRodin Pro B.otf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Slump;
+    src: url("../media/FOT-SlumpStd-DB.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: NewRodin, sans-serif;
+    line-height: 1.35;
+}
+
+body {
+    background: #EFE9F4;
+    color: #171D1C
+}
+
+button {
+    background: #E1D6EA;
+    border: 1px solid #CEBCDC;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.button-no {
+    background: #F45260;
+    border-color: #860913;
+    color: #EFE9F4;
+}
+
+.big-alert {
+    background: #860913;
+    color: #EFE9F4;
+    width: 100vw;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

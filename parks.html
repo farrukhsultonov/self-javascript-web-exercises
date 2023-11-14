@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parks</title>
+    <link rel="stylesheet" href="css/parks-bonus.css">
+    <style>
+        li {
+            padding-left: 5px;
+            padding-right: 5px
+        }
+        .highlighter {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<h1>National Parks FAQ</h1>
+
+<dl>
+    <dt>How many people visit the national parks?</dt>
+    <dd>Total recreation visitors to the national parks in 2018: 318,211,833.</dd>
+
+    <dt>How old is the National Park System?</dt>
+    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>
+
+    <dt>How many employees are in the National Park Service?</dt>
+    <dd>Permanent, temporary, and seasonal employees: More than 20,000</dd>
+
+    <dt>What is the origin of the National Park Service arrowhead?</dt>
+    <dd>The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951.</dd>
+
+    <dt>How many areas are in the National Park System?</dt>
+    <dd>The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands.</dd>
+
+    <dt>What is the largest national park site?</dt>
+    <dd>Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</dd>
+
+    <dt>What is the National Park Service budget?</dt>
+    <dd>Fiscal Year (FY) 2014 Enacted: $2.98 billion.</dd>
+
+    <dt>Can I bring my pet to a national park?</dt>
+    <dd>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities.</dd>
+
+    <dt>How do I apply for a job with the National Park Service?</dt>
+    <dd>National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs.</dd>
+
+    <dt>What do I need to know about driving off road in national parks?</dt>
+    <dd>Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
+</dl>
+
+<h1>National Parks of Iceland</h1>
+<h3>Snæfellsjökull</h3>
+<ul>
+    <li>Stratovolcano</li>
+    <li>Sometimes it may be seen from the city of Reykjavík over Faxa Bay, at a distance of 120 km.</li>
+    <li>The mountain is one of the most famous sites of Iceland, primarily due to the novel Journey to the Center of the Earth (1864) by Jules Verne, in which the protagonists find the entrance to a passage leading to the center of the earth on Snæfellsjökull.</li>
+    <li>In August 2012 the summit was ice-free for the first time in recorded history.</li>
+</ul>
+
+<h3>Vatnajökull</h3>
+<ul>
+    <li>Vatnajökull National Park is divided into four territories.</li>
+    <li>Vatnajökull is Europe's largest glacier outside the arctic, with a surface area of 8,100 km2.</li>
+    <li>It encompasses all of Vatnajökull glacier and extensive surrounding areas. These include the national parks previously existing at Skaftafell in the southwest and Jökulsárgljúfur in the north.</li>
+    <li>On 5 July 2019, Vatnajökull National Park was inscribed as a World Heritage Site.</li>
+</ul>
+
+<h3>Þingvellir</h3>
+<ul>
+    <li>The National Gallery of Iceland owns more than 150 paintings by Ásgrímur Jónsson that have Þingvellir as their subject.</li>
+    <li>The name Þingvellir is derived from the Old Norse Þingvǫllr, from þing (“thing, assembly”) and vǫllr (“field”), meaning assembly fields.</li>
+    <li>Þingvellir is associated with the Althing, the national parliament of Iceland, which was established at the site in 930 AD.</li>
+    <li>Þingvellir was designated as a World Heritage Site in 2004.</li>
+</ul>
+
+<button id="btn">Click me to highlight last list item</button>
+
+
+<!--__________________ bonus ___________________________-->
+
+<h1>Bonus</h1>
+<div id="container">
+    <div id="picture1" class="picture">
+        <img src="images/apple-ipad.jpg" alt="Japanese print of two cockatoos">
+        <button type="button" id="button1">Swap</button>
+    </div>
+    <div id="picture2" class="picture">
+        <img src="images/macbook.jpg" alt="Japanese print of a person walking in the snow">
+        <button type="button" id="button2">Swap</button>
+    </div>
+    <div id="picture3" class="picture">
+        <img src="images/security.jpg" alt="Japanese print of two junks on a sea at dawn">
+        <button type="button" id="button3">Swap</button>
+    </div>
+</div>
+
+
+
+<script>
+    "use strict";
+
+    (() => {
+        const h3s = document.querySelectorAll("h3");
+        const listItems = document.querySelectorAll("li");
+
+        document.querySelector("#btn").addEventListener("click", function () {
+            const uls = document.querySelectorAll("ul");
+            for (const ul of uls) {
+                ul.lastElementChild.classList.add("highlighter");
+            }
+        });
+
+        for (const h3 of h3s) {
+            h3.addEventListener("click", function() {
+                const lis = this.nextElementSibling.children;
+                for (const li of lis) {
+                    li.style.fontWeight = "bold";
+                }
+            })
+        }
+
+        for (const listItem of listItems) {
+            listItem.addEventListener("click", function() {
+                this.parentElement.firstElementChild.style.color = "#5863F8";
+            })
+        }
+    })();
+
+
+
+
+    <!--__________________ bonus ___________________________-->
+    const buttons = document.querySelectorAll("button");
+
+    buttons[1].addEventListener("click", event => {
+        const nextImage = event.target.parentElement.nextElementSibling.firstElementChild;
+        const nextImageSrc = nextImage.getAttribute("src");
+        const thisImageSrc = event.target.previousElementSibling.getAttribute("src");
+        event.target.previousElementSibling.setAttribute("src", nextImageSrc);
+        nextImage.setAttribute("src", thisImageSrc);
+    });
+
+    buttons[2].addEventListener("click", event => {
+        const randomNumber = Math.floor(Math.random()*2);
+        const nextImage = event.target.parentElement.nextElementSibling.firstElementChild;
+        const nextImageSrc = nextImage.getAttribute("src");
+        const previousImage =  event.target.parentElement.previousElementSibling.firstElementChild;
+        const previousImageSrc = previousImage.getAttribute("src");
+        const thisImageSrc = event.target.previousElementSibling.getAttribute("src");
+        if (randomNumber === 0){
+            event.target.previousElementSibling.setAttribute("src", nextImageSrc);
+            nextImage.setAttribute("src", thisImageSrc);
+        } else {
+            event.target.previousElementSibling.setAttribute("src", previousImageSrc);
+            previousImage.setAttribute("src", thisImageSrc);
+        }
+    });
+
+    buttons[3].addEventListener("click", event => {
+        const previousImage =  event.target.parentElement.previousElementSibling.firstElementChild;
+        const previousImageSrc = previousImage.getAttribute("src");
+        const thisImageSrc = event.target.previousElementSibling.getAttribute("src");
+        event.target.previousElementSibling.setAttribute("src", previousImageSrc);
+        previousImage.setAttribute("src", thisImageSrc);
+    });
+</script>
+
+</body>
+</html>
+
+
+
+<!--************************ another solution **************************************-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Parks</title>-->
+
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>National Parks FAQ</h1>-->
+
+<!--<dl>-->
+<!--    <dt>How many people visit the national parks?</dt>-->
+<!--    <dd>Total recreation visitors to the national parks in 2018: 318,211,833.</dd>-->
+
+<!--    <dt>How old is the National Park System?</dt>-->
+<!--    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>-->
+
+<!--    <dt>How many employees are in the National Park Service?</dt>-->
+<!--    <dd>Permanent, temporary, and seasonal employees: More than 20,000</dd>-->
+
+<!--    <dt>What is the origin of the National Park Service arrowhead?</dt>-->
+<!--    <dd>The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on-->
+<!--        July 20, 1951.-->
+<!--    </dd>-->
+
+<!--    <dt>How many areas are in the National Park System?</dt>-->
+<!--    <dd>The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia,-->
+<!--        American Samoa, Guam, Puerto Rico, and the Virgin Islands.-->
+<!--    </dd>-->
+
+<!--    <dt>What is the largest national park site?</dt>-->
+<!--    <dd>Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</dd>-->
+
+<!--    <dt>What is the National Park Service budget?</dt>-->
+<!--    <dd>Fiscal Year (FY) 2014 Enacted: $2.98 billion.</dd>-->
+
+<!--    <dt>Can I bring my pet to a national park?</dt>-->
+<!--    <dd>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging-->
+<!--        facilities.-->
+<!--    </dd>-->
+
+<!--    <dt>How do I apply for a job with the National Park Service?</dt>-->
+<!--    <dd>National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs.</dd>-->
+
+<!--    <dt>What do I need to know about driving off road in national parks?</dt>-->
+<!--    <dd>Before you head out, check with the national parks that you intend to visit. In many national parks, off-road-->
+<!--        driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.-->
+<!--    </dd>-->
+<!--</dl>-->
+
+<!--<h3>Denali National Park</h3>-->
+<!--<ul>-->
+<!--    <li>Location: Alaska</li>-->
+<!--    <li>Acreage:  4.741 million acres</li>-->
+<!--    <li>Highest Elevation: With a peak at 6,190 meters (20,310 feet), Alaska’s Denali has the highest elevation in North America. </li>-->
+<!--    <li>Lowest Elevation: Denali’s base sits at about 2,000 feet above sea level and rises over three and one-half miles to its 20,310 foot summit.</li>-->
+<!--</ul>-->
+<!--<h3>Lake Clark National Park</h3>-->
+<!--<ul>-->
+<!--    <li>Location: Alaska</li>-->
+<!--    <li>Acreage: Comprised of 4 million acres on the Alaska Peninsula in southwest Alaska, Lake Clark is one of the nation’s most remote national park units.</li>-->
+<!--    <li>Visitation: less than 20,000 visitors a year</li>-->
+<!--    <li>Climate: Lake Clark National Park and Preserve has two distinct climate areas: the coast and the interior. The coast is often foggy and wet, with an average annual rainfall of 40 to 80 inches.</li>-->
+<!--</ul>-->
+<!--<h3>Kenai Fjords National Park</h3>-->
+<!--<ul>-->
+<!--    <li>Location: Alaska</li>-->
+<!--    <li>Acreage: Sweeping from rocky coastline to glacier-crowned peaks, Kenai Fjords National Park encompasses 607,805 acres of unspoiled wilderness on the southeast coast of Alaska’s Kenai Peninsula.</li>-->
+<!--    <li>Visitation: Kenai Fjords had 356,601 visitors in 2019.</li>-->
+<!--    <li>Elevation: The highest surface on the Harding Icefield is approximately 5,200 feet above sea level. The highest peak within the boundaries of Kenai Fjords, at 6,450 feet, is unnamed.</li>-->
+<!--</ul>-->
+<!--<button id="highlight-btn">Click to highlight</button>-->
+<!--<script>-->
+<!--    let lists = document.querySelectorAll("ul");-->
+<!--    let highlightBtn = document.querySelector("#highlight-btn");-->
+<!--    highlightBtn.addEventListener("click", function () {-->
+<!--        for (let list of lists) {-->
+<!--            list.lastElementChild.style.backgroundColor = 'yellow'-->
+<!--        }-->
+<!--    })-->
+
+<!--    let subHeaders = document.querySelectorAll("h3");-->
+
+<!--    for (let subHeader of subHeaders) {-->
+<!--        subHeader.addEventListener("click", function () {-->
+<!--            for(let listItem of subHeader.nextElementSibling.children){-->
+<!--                listItem.style.fontWeight = 'bold'-->
+<!--            }-->
+<!--        })-->
+<!--    }-->
+
+<!--    let listItems = document.querySelectorAll("li");-->
+
+<!--    for (let listItem of listItems) {-->
+<!--        listItem.addEventListener("click", function () {-->
+<!--            listItem.parentElement.firstElementChild.style.color = 'blue';-->
+<!--        })-->
+<!--    }-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

@@ -1,5 +1,8 @@
 // Technical interview questions
 //
+
+// Good Afternoon Joe, my name is Farrukh, thank you for joining us today. At this step of the interview process. we will be focusing on the technical side. And just to let you know I will provide feedback at the end of the interview. And let get started. We will start with some HTML questions.
+
 // ***************************** HTML technical questions ****************************************
 // 1. What is the role of the head tag in an HTML document?
 // Ans: head tag contains machine-readable metadata about the page and typical sub elements including the title, meta tags, and stylesheet.
@@ -187,7 +190,7 @@
 // *********************************************************************************************************************
 
 // Objective: Create a function that takes in an array and returns an array of the names of people who know JavaScript.
-
+//
 // Data Structure/Example Input:
 // let developers = [
 //     {

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+<p>Do you know the Konami Code?</p>
+<p>Enter Konami Code now for 30 extra lives:</p>
+<script>
+    "use strict";
+
+    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+    let userInput = 0;
+
+    document.addEventListener("keyup", event => {
+        if (konamiCode[userInput] !== event.key) {
+            userInput = 0;
+            alert("Wrong! Try again!")
+        } else {
+            userInput++;
+        }
+        if (userInput === 11) {
+            alert("You get 30 lives!");
+            userInput = 0;
+        }
+    });
+</script>
+</body>
+</html>

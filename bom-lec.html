@@ -19,12 +19,10 @@ The BOM provides system dialogs such as alert(), confirm(), and prompt() which a
 - And the setTimeout() method allows code to be executed after a specified time interval has passed and can be cancelled using the clearTimeout() method.-->
 
 
-
-
 <script>
 
-    // console.log(window.innerWidth)
-    // console.log(window.innerHeight)
+    console.log(window.innerWidth)
+    console.log(window.innerHeight)
 
 
 
@@ -32,16 +30,11 @@ The BOM provides system dialogs such as alert(), confirm(), and prompt() which a
     let max = 10;
     let interval = 1000;
 
-    // function sayHello() {
-    //     return "hello";
-    // }
-    // setInterval(sayHello, 5000);
-
     let intervalId = setInterval(function (){
         if(count >= max){
             clearInterval(intervalId);
             console.log("All done")
-            // location.reload();
+            location.reload();
         }else {
             count++;
             console.log('Repeating this line ' + count)
@@ -49,12 +42,13 @@ The BOM provides system dialogs such as alert(), confirm(), and prompt() which a
     }, interval)
 
 
-    let delay = 5000;
 
-    let timeoutId = setTimeout(function (){
-        alert('Here is a delayed hello!');
-        location = "https://java.codeup.com";
-    }, delay);
+    // let delay = 5000;
+    //
+    // let timeoutId = setTimeout(function (){
+    //     alert('Here is a delayed hello!');
+    //     location = "https://codeup-curriculum.web.app/";
+    // }, delay);
 
     // clearTimeout(timeoutId);
 </script>
