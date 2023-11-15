@@ -107,14 +107,14 @@ function concatenateListItems() {
 // 7. When hovering over the divs within the div with a class of hidden-letters, a letter will become visible in a span within the div being hovered over.
 
 document.querySelectorAll('.hidden-letters div').forEach(function (letterDiv) {
-    letterDiv.addEventListener('mouseover', function () {
+    letterDiv.addEventListener('mouseenter', function () {
         let letterSpan = letterDiv.querySelector('span');
         if (letterSpan) {
             letterSpan.style.visibility = 'visible';
         }
     });
 
-    letterDiv.addEventListener('mouseout', function () {
+    letterDiv.addEventListener('mouseleave', function () {
         let letterSpan = letterDiv.querySelector('span');
         if (letterSpan) {
             letterSpan.style.visibility = 'hidden';
