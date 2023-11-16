@@ -11,6 +11,17 @@
  * - lastElementChild: crawl down the DOM tree, returns last child element
  */
 
+
+// In this lesson we will talk about techniques that help us navigate and manipulate HTML elements efficiently using JavaScript!
+
+
+// The DOM (Document Object Model) represents HTML elements as a tree of nodes.
+// Nodes can be elements, text, or comments.
+// Because the dom is expressed as a tree of nodes we can reach any element from any other element.
+// Each node has information about its relationship to other elements on the page.
+// DOM trees can get very extensive in that case consider using .getElementById() or .querySelector()
+
+
 const box2 = document.querySelector("#box2");
 const parent = box2.parentElement;
 console.log(parent)
