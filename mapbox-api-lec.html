@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+    #map {
+    /* the width and height may be set to any size */
+    width: 100%;
+    height: 700px;
+    }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZmFycnVraHMiLCJhIjoiY2xwMzU5N3ZiMHczajJtcXZhZXIwdm02ayJ9.IJ2UayzYtY8Vg9VILyUh5g';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        zoom: 10, // starting zoom
+        center: [-96.80340786301149, 32.777973763883914] // [lng, lat]
+    });
+
+    const marker = new mapboxgl.Marker()
+        .setLngLat([-96.80340786301149, 32.777973763883914])
+        .addTo(map);
+
+    let popup = new mapboxgl.Popup()
+        .setLngLat([-96.80340786301149, 32.777973763883914])
+        .setHTML("<p>Codeup Rocks!</p>")
+        .addTo(map);
+
+
+
+
+    const codeupPopup = new mapboxgl.Popup()
+        .setHTML("<p>Welcome to San Antonio!</p>");
+
+    marker.setPopup(codeupPopup);
+</script>
+</body>
+</html>
