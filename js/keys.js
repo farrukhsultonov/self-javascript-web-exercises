@@ -1,2 +1,4 @@
 const MAPBOX_TOKEN = "pk.eyJ1IjoiZmFycnVraHMiLCJhIjoiY2xnMTZydjlzMWd5MDNsbW82bHVnMWJrcyJ9.Fp4i6Xnwoc_15VCtMBRKmA";
 const OPEN_WEATHER_APPID = "c159e57aaf8500e24808d9b51cb3be68";
+
+const GITHUB_API_KEY = "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";
