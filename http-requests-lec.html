@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Http requests and responses</title>
+</head>
+<body>
+
+
+<!-- Billie Example-->
+<form id="searchForm">
+    <input type="text" id="searchBar" placeholder="Please enter PokeName">
+    <input type="submit" id="searchButton" value="Search">
+</form>
+<div class="container"></div>
+
+
+<p id="my-books"></p>
+
+
+<!-- So far we have been building a lot of static websites, and all those websites have only been able to display whatever we type into that html or js directly. What if there is another way. Imaging were building some-type of weather app and I want to update the weather every week, I can easily manually go in and say the weather for monday is going be 50 and for tuesday it's going to be xyz and so on, or I can make a request to an api that's going get that data for me every day, so I don't have to manually hard type that, I don't have to ever touch my weather website, I just have some script that says hey goto this url, get the info for me and put it on the page. That's where http and api request and responses come into play.
+
+1. HTTP or Hypertext Transfer Protocol
+    * Is the foundation of data communication on the world wide web.
+    * It defines the rules for how messages (requests and responses) are formatted and transmitted between web browsers and web servers.
+    * It's the protocol that enables the retrieval of web pages and the exchange of data on the internet.
+    * For example, when a user wants to view a web page, their web browser (in this case the web browser is the client) sends an HTTP request to the server (which the server is the remote computer) hosting the desired content. The server then responds with an HTTP response, providing the requested data or indicating an error.
+
+    Some common type of request (also called HTTP Methods) are
+    * GET
+        - Purpose: Is to retrieve data from the server
+        -Example: Fetching a webpage, retrieving data from a server
+    * POST
+        - Purpose: Is to submit data to be processed to a specified resource
+        - Example: Submitting a form, uploading a file.
+    * PUT
+        - Purpose: Is to update a resource or create a new resource if it doesn't exist
+        - Example: Updating a user's profile, uploading a resource to a specific URL
+    * PATCH
+        - Purpose: Is to apply partial modifications to a resource
+        - Example: Updating specific fields of an existing resource
+    * DELETE
+        - Purpose: Is to remove or delete
+        - Example: Removing a file, deleting a user account.
+
+2. What is an API
+    * API stands for "Application Programming Interface" and is a way of describing software design.
+    *  At the highest level an API is any application with a set of instruction for how programmers can interact with getting data.
+    * APIs can be implemented using HTTP as a communication protocol. They define endpoints (URLs) and rules for how data should be requested and sent.
+    * There are APIs for (weather, maps, stocks, books, sports, art, games, movies, etc...). Some are free, some are somewhat expensive and some are really expensive.
+    * Here is a good list of Free Apis (https://github.com/public-apis/public-apis)
+
+    - API Data
+    * An API will receive a scripted request and send a response. That data will generally be in one of two forms: XML or JSON.
+    * XML stands for "eXtensible Markup Language" and is the granddaddy of serialized data formats (itself based on HTML). XML is fat, ugly and cumbersome to parse. It is increasingly the less common of the two formats you'll encounter.
+    * XML looks like this:
+        <users>
+          <user id="23">
+            <name><![CDATA[Bob]]></name>
+          </user>
+          <user id="72">
+            <name><![CDATA[Tim]]></name>
+          </user>
+        </users>
+
+    * JSON or JavaScript Object Notation is structured data (i.e., arrays and object). JSON has become a universal standard for sending and receiving data across the web. It is light-weight, easy-to-read and quick to parse.
+    * JSON is based off the JavaScript Object syntax, and is just a long string of characters. One notable difference is that double quotes must always be used for keys and values.
+    * JSON looks like this:
+        {
+            "users": [{ "name": "Bob", "id": 23 }, { "name": "Tim", "id": 72 }],
+            "content": "This is a piece of content"
+        }
+
+
+-UNLESS ASKED DON'T COVER (CORS)
+
+CORS stands for Cross-Origin Resource Sharing. In simplest terms, CORS is a security feature implemented by web browsers that controls how web pages in one domain can request and interact with resources hosted on another domain.
+
+When a web page makes a request to a different domain (cross-origin request) for resources such as images, scripts, or data, CORS comes into play to ensure that the browser permits or denies the request based on security considerations.
+
+3. What is AJAX or Asynchronous JavaScript and XML.
+    * AJAX is the concept of communicating with a server, sending or retrieving data, without refreshing the current webpage.
+    * AJAX uses HTTP to send requests to APIs. These requests can retrieve data in various formats, not just XML, despite the name.
+    * For example, back in the early internet day, whenever we are making a request to a page, the entire page had to refresh and reload. Whenever we change some type of data the entire page had to reload. Imagine we were on instagram's website and everytime we hit a like instead of it just turning blue and just incrementing, the entire page refreshed, and then it take you back to where you were, and it was incrementing. If you had to like again or de-like it would refresh again. You can imagine that was really annoying. So ajax came around for way for us to make request and not have our page refresh, it was a way for us to asynchronously go out and do some type of request and let the rest of our javascript run while request was happening.
+
+In simpler terms:
+    * HTTP is the protocol that enables communication on the web.
+    * API is a set of rules that allows different software to talk to each other, often implemented using HTTP.
+    * AJAX is a technique that uses JavaScript and HTTP to make dynamic requests to a server without reloading the entire web page. It often involves interacting with APIs to get or send data.
+
+------------ STOP AT THIS POINT FOR ANY QUESTIONS ABOUT WHAT I HAVE COVERED SO FAR. ------------
+-->
+
+
+<script>
+
+    // We will use Javascript's fetch() method to make AJAX calls to an API
+    // Introduce the fetch api
+    // Mention fetch's default response type is GET
+
+    // show basic fetch
+    fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    // what does fetch return??? a pokemon character?
+
+    // Let's save it to a variable and log it
+    const something = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    console.log(something);
+
+    // explain asynchronous and Promises
+    // We can see that fetch request generates a promise. And if anybody made a promise before in your life. What does a promise do?
+    //     promise entails something we're going to do later right.
+
+    // And so we use the .then() method which accepts a callback function as an argument. fetch will then call that function once the request has come back successfully.
+    // The callback function has a single parameter:
+    // response: the ENTIRE response from the server
+
+    // use the .then() method of the promise
+    // and log the response
+    const pokePromise = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    pokePromise.then(function(response) {
+        console.log(response);
+    });
+
+    // now show asynchronous behavior at work and use cleaning the kitchen as example to explain async behavior
+    console.log(1);
+    const pokePromise2 = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    pokePromise2.then(function (response) {
+        console.log(2);
+        console.log(response);
+        console.log(response.body)
+    });
+    console.log(3);
+
+    // explain ok and status (response status codes)
+    // show http response codes
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+    // use ok and status
+    const pokePromise3 = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    pokePromise3.then(function (response) {
+        if (!response.ok) {
+            console.log("ERROR!");
+            console.log(response.statusText); // this may not print anything depending on the status code
+        } else {
+            console.log("Success!");
+            console.log(response);
+        }
+    });
+
+    // now let's use the JSON body that is returned in the response
+    // the handy json() function
+    fetch("https://pokeapi.co/api/v2/pokemon/charmander")
+        .then(function(response) {
+            console.log(response.json());
+        });
+
+
+    // WHAT?!? another promise!?!
+    // ok, can we just use .json().then()?
+    // sure. we call that callback hell, or the pyramid of doom
+    fetch("https://pokeapi.co/api/v2/pokemon/charmander")
+        .then(function(response) {
+            response.json()
+                .then(function(data) {
+                    console.log("yay I finally have some data. :|");
+                    console.log(data);
+                })
+        });
+
+    // instead of callback hell, we can RETURN THE .json() PROMISE and keep its .then() inline with the other .then()
+    // this improves its readability
+    fetch("https://pokeapi.co/api/v2/pokemon/charmander")
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+        console.log("yay I finally have some data. :|");
+        console.log(data);
+        if(data.game_indices !== null) {
+            console.log(data.game_indices[1]);
+        }
+    });
+
+
+
+    <!--     Promises, Example of how to make two fetch request and do something with it. -->
+    const githubPromise = fetch('https://api.github.com/repositories');
+    const bitbucketPromise = fetch('https://api.bitbucket.org/2.0/repositories');
+
+    Promise.all([githubPromise, bitbucketPromise])
+        .then(response => {
+            // data is an array of the resolved values from each promise
+            const [githubData, bitbucketData] = response;
+
+            // Now you can do something with both pieces of data
+            console.log('GitHub Data:', githubData);
+            console.log('Bitbucket Data:', bitbucketData);
+        })
+        .catch(error => {
+            // handle errors
+            console.error('Error:', error);
+        });
+
+
+
+
+    // Billie Example
+    function createPokemonElements(data) {
+        let h1 = document.createElement('h1');
+        h1.innerHTML = data.name;
+
+        let image = document.createElement('img');
+        image.src = data.sprites.front_shiny;
+
+        let pokemonDiv = document.createElement('div');
+        pokemonDiv.appendChild(h1);
+        pokemonDiv.appendChild(image);
+
+        return pokemonDiv;
+    }
+
+    function onSuccess(response) {
+        return response.json();
+    }
+
+    function onFail(error) {
+        console.error('Error:', error);
+        // You can provide user-friendly error handling here
+        alert('Something went wrong. Please try again later.');
+    }
+
+    function cleanUp() {
+        console.log("stop loading animation");
+    }
+
+    let searchForm = document.querySelector('#searchForm');
+
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        let input = document.querySelector('#searchBar').value;
+        let container = document.querySelector(".container");
+
+        fetch(`https://pokeapi.co/api/v2/pokemon/${input}`)
+            .then(onSuccess)
+            .then(data => {
+                // Call the function to create h1 and img elements
+                let pokemonDiv = createPokemonElements(data);
+
+                // Append the new div to the container
+                container.appendChild(pokemonDiv);
+
+                // Clear the input box
+                document.querySelector("#searchBar").value = '';
+            })
+            .catch(onFail)
+            .finally(cleanUp);
+    });
+
+    // lastly, show how you can use fetch to read a data file
+    // and display its contents in an HTML element
+
+    function processBooks(books) {
+        for (let i = 0; i < books.length; i++) {
+            document.querySelector("#my-books").innerText += books[i].title + "\n";
+        }
+    }
+
+    fetch("data/books.json")
+        .then(response => response.json())
+        .then(books => processBooks(books));
+</script>
+
+</body>
+</html>

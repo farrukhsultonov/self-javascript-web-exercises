@@ -24,31 +24,32 @@
     // introduce the fetch api
     // mention fetch's default response type is GET
 
-    // show basic fetch
-    fetch("https://pokeapi.co/api/v2/pokemon/charmander");
-    // what does fetch return??? a pokemon character?
+    // // show basic fetch
+    // fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    // // what does fetch return??? a pokemon character?
+    //
+    // // save it to a variable and log it
+    // const something = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    // console.log(something);
+    //
+    // // explain asynchronous and Promises
+    //
+    // // use the .then() method of the promise
+    // // and log the response
+    // const pokePromise = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    // pokePromise.then(function(response) {
+    //     console.log(response);
+    // });
+    // // explain the callback function above!
 
-    // save it to a variable and log it
-    const something = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
-    console.log(something);
 
-    // explain asynchronous and Promises
-
-    // use the .then() method of the promise
-    // and log the response
-    const pokePromise = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
-    pokePromise.then(function(response) {
-        console.log(response);
-    });
-    // explain the callback function above!
-
-
-    // now show asynchronous behavior at work
+    // // now show asynchronous behavior at work
     console.log("Before the fetch");
     const pokePromise2 = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
     pokePromise2.then(function(response) {
         console.log("Got a response!");
         console.log(response);
+        console.log(response.body)
     });
     console.log("After the fetch");
 
@@ -58,19 +59,19 @@
 
     // point out the unusable body
 
-    // use ok and status
-    const pokePromise3 = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
-    pokePromise3.then(function(response) {
-        if(!response.ok) {
-            console.log("ERROR!");
-            console.log(response.statusText); // this may not print anything depending on the status code
-        } else {
-            console.log("Success!");
-            console.log(response);
-        }
-    });
-
-    // don't have to use an intermediary variable
+    // // use ok and status
+    // const pokePromise3 = fetch("https://pokeapi.co/api/v2/pokemon/charmander");
+    // pokePromise3.then(function(response) {
+    //     if(!response.ok) {
+    //         console.log("ERROR!");
+    //         console.log(response.statusText); // this may not print anything depending on the status code
+    //     } else {
+    //         console.log("Success!");
+    //         console.log(response);
+    //     }
+    // });
+    //
+    // // don't have to use an intermediary variable
     fetch("https://pokeapi.co/api/v2/pokemon/charmander")
         .then(function(response) {
             console.log(response);
@@ -86,14 +87,14 @@
     // WHAT?!? another promise!?!
     // ok, can we just use .json().then()?
     // sure. we call that callback hell, or the pyramid of doom
-    fetch("https://pokeapi.co/api/v2/pokemon/charmander")
-        .then(function(response) {
-            response.json()
-                .then(function(data) {
-                    console.log("yay I finally have some data. :|");
-                    console.log(data);
-                })
-        });
+    // fetch("https://pokeapi.co/api/v2/pokemon/charmander")
+    //     .then(function(response) {
+    //         response.json()
+    //             .then(function(data) {
+    //                 console.log("yay I finally have some data. :|");
+    //                 console.log(data);
+    //             })
+    //     });
 
     // instead of callback hell, we can RETURN THE .json() PROMISE and keep its .then() inline with the other .then()
     // this improves its readability
@@ -103,6 +104,9 @@
         }).then(function(data) {
         console.log("yay I finally have some data. :|");
         console.log(data);
+        if(data.game_indices !== null) {
+        console.log(data.game_indices[1]);
+        }
     });
 
     // here is where I will admit arrow functions and named functions clean it up nicely
@@ -126,7 +130,7 @@
     }
 
     console.log("start loading animation");
-    fetch("https://www.google.com")
+    fetch("https://pokeapi.co/api/v2/pokemon/charmander")
         .then(response => response.json())
         .then(data => usePokemon(data))
         .catch(error => handleError(error))
@@ -171,6 +175,33 @@
         .then(response => response.json())
         .then(books => processBooks(books));
 
+
+
+    // fetch('https://api.github.com/users')
+    //     .then(response => response.json())
+    //     .then(users => {
+    //         users.forEach( user => {
+    //             // log each user's username (or login property)
+    //             console.log(user.login);
+    //         })
+    //     })
+    //     .catch(error => console.error(error));
+
+
+
+    // function getGithubUsernames() {
+    //     return fetch('https://api.github.com/users')
+    //         .then(response => response.json())
+    // }
+    //
+    // // later on...
+    //
+    // getGithubUsernames().then( users => {
+    //     users.forEach( userObj => {
+    //         // do something with each username
+    //         console.log(userObj.login);
+    //     });
+    // }).catch(error => console.error(error));
 
 </script>
 </body>
