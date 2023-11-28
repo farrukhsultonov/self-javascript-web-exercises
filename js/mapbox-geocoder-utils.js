@@ -8,14 +8,11 @@
  *
  * EXAMPLE:
  *
- *
+ *  geocode("San Antonio", API_TOKEN_HERE).then(function(results) {
+ *      // do something with results
+ *  })
  *
  */
- geocode("San Antonio", 'pk.eyJ1IjoiZmFycnVraHMiLCJhIjoiY2xwMzU5N3ZiMHczajJtcXZhZXIwdm02ayJ9.IJ2UayzYtY8Vg9VILyUh5g').then(function(results) {
-      // do something with results
- })
-
-
 function geocode(search, token) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';

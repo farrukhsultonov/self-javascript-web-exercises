@@ -1,23 +1,20 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Online Store</title>
-
     <style>
-        tbody tr:nth-child(even) {
-            background-color: blue;
+        body {
+            font-family: NewRodin, sans-serif;
+            background: #EFE9F4;
         }
-        tbody tr:nth-child(odd) {
-            background-color: red;
-        }
-        /*.odd {*/
-        /*    background-color: red;*/
-        /*}*/
 
-        /*.even {*/
-        /*    background-color: blue;*/
-        /*}*/
+        table, td, th, tr {
+            border: 1px solid #171D1C;
+        }
+
+        td, th {
+            padding: .5em;
+        }
     </style>
 </head>
 <body>
@@ -38,57 +35,33 @@
 
 <script>
     "use strict";
+    const productsTable = document.querySelector("#insertProducts");
     // TODO: Create an AJAX GET request for the file under data/inventory.json
-    fetch("/data/inventory.json")
-        .then(response => response.json())
+    fetch("data/inventory.json")
+        .then(resp => resp.json())
         .then(data => {
-            // if I get here, I have the inventory data
-            createInventoryRows(data);
-        });
-
+        for (let item of data) {
+            const newRow = document.createElement("tr");
+            const title = document.createElement("td");
+            const quantity = document.createElement("td");
+            const price = document.createElement("td");
+            const categories = document.createElement("td");
+            // ~~~~~~~~~~~~~~~~~~~~~~~~~
+            title.innerText = item.title;
+            quantity.innerText = item.quantity;
+            price.innerText = `$${item.price.toFixed(2)}`;
+            categories.innerText = item.categories;
+            newRow.appendChild(title);
+            newRow.appendChild(quantity);
+            newRow.appendChild(price);
+            newRow.appendChild(categories);
+            productsTable.appendChild(newRow);
+        }
+    });
     // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
-
-    function createInventoryRows(inventory) {
-        // 1. iterate thru the inventory array
-        for (let i = 0; i < inventory.length; i++) {
-
-            // odd rows will be red (have the odd class)
-            // even rows will be blue (have the even class)
-
-            // 2. add that item to the table
-            createInventoryItemRow(inventory[i], i);
-        }
-
-        // console.log(inventory);
-    }
-
-    function createInventoryItemRow(item, index) {
-        // 1. get ref to the table
-        const tBody = document.querySelector("#insertProducts");
-
-        // 2. create a row element
-        const row = document.createElement("tr");
-
-        // if(index % 2 === 0) {
-        //     row.classList.add("even");
-        // } else {
-        //     row.classList.add("odd");
-        // }
-
-        // 3. add the table data to the row
-        row.innerHTML = `<td>${item.title}</td>
-<td>${item.quantity}</td>
-<td>${item.price}</td>
-<td>${item.categories}</td>
-`;
-
-        // 4. append the row to the table
-        tBody.appendChild(row);
-    }
-
 </script>
 
 </body>

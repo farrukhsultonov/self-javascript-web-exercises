@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ajax Blog</title>
+    <meta charset="UTF-8">
+    <title>AJAX Blog</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+        }
+        #posts {
+            margin: 20px;
+        }
+        .blogPost {
+            border: 1px solid black;
+            border-radius: 8px;
+            margin: 10px auto;
+        }
+        .blogPost h2 {
+            text-align: center;
+        }
+        .blogPost p {
+            padding: 10px 20px 10px 30px;
+            line-height: 25px;
+        }
+
+        .blogPost h5 {
+            text-indent: 25px;
+            color: saddlebrown;
+        }
+    </style>
 </head>
 <body>
-
-<h1>Blog Posts</h1>
-
-<div id="posts">
-</div>
-
+<div id="posts"></div>
 <script>
-    // grab a reference to the posts div
     const postsDiv = document.querySelector("#posts");
-
-    // TODO: Create an AJAX GET request for the file under data/blog.json
-    fetch("/data/blog.json")
-        .then(response => response.json())
+    fetch("data/blog.json")
+        .then(resp => resp.json())
         .then(data => {
-            // if I get here, I have the blog data
-            for (let i = 0; i < data.length; i++) {
-                // 1. create a div element for the new post
-                const div = document.createElement("div");
-                // add any classes we might want for the entire post
-                div.style.border = "1px solid orange";
-                // 2. set the post div data in the post div
-                div.innerHTML = `
-<h4>${data[i].title}</h4>
-<p>${data[i].content}</p>
-<p>${data[i].date}</p>`;
-
-                // 3. append the post div to the posts
-                postsDiv.appendChild(div);
-            }
+        data.forEach(blogPost => {
+            const postDiv = document.createElement("div");
+            postDiv.classList.add('blogPost');
+            postDiv.innerHTML = `
+                            <h2>${blogPost.title}</h2>
+                            <p>${blogPost.content}</p>
+                            <h5>${blogPost.date}</h5>
+                                `;
+            postsDiv.appendChild(postDiv);
         });
-
-    // TODO: Take the data from blog.json and append it to the posts div
-
+    });
 </script>
-
 </body>
 </html>
