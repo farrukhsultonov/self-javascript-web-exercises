@@ -14,8 +14,11 @@
  *
  */
 function geocode(search, token) {
+    //api url
     var baseUrl = 'https://api.mapbox.com';
+    //the endpoint when i reuqest lgn and lat based on location name
     var endPoint = '/geocoding/v5/mapbox.places/';
+    //this fetch takes in a url endpoint that will return my lgnlat
     return fetch(`${baseUrl}${endPoint}${encodeURIComponent(search)}.json?access_token=${token}`)
         .then( res => res.json() )
         // to get all the data from the request, comment out the following three lines...

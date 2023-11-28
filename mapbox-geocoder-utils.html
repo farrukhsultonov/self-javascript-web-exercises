@@ -1,3 +1,56 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Geocode Examples</title>-->
+<!--    &lt;!&ndash; Mapbox CSS &ndash;&gt;-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />-->
+<!--    &lt;!&ndash; Custom CSS &ndash;&gt;-->
+<!--    <style>-->
+<!--        #map {-->
+<!--            /* the width and height may be set to any size */-->
+<!--            width: 100%;-->
+<!--            height: 700px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>My First Mapbox Map!</h1>-->
+
+<!--&lt;!&ndash; The HTML element that serves as the Mapbox container &ndash;&gt;-->
+<!--<div id='map'></div>-->
+
+<!--&lt;!&ndash; Mapbox JS &ndash;&gt;-->
+<!--<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>-->
+
+<!--&lt;!&ndash; Mapbox Geocoder Util Methods &ndash;&gt;-->
+<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
+
+<!--&lt;!&ndash; Custom JS &ndash;&gt;-->
+<!--<script>-->
+<!--    mapboxgl.accessToken = ACCESS_TOKEN;-->
+<!--    const map = new mapboxgl.Map({-->
+<!--        container: 'map',-->
+<!--        style: 'mapbox://styles/mapbox/streets-v9',-->
+<!--        zoom: 10,-->
+<!--        center: [-96.80329, 32.7778]-->
+<!--    });-->
+
+<!--    // the  geocode method from mapbox-geocoder-utils.js-->
+<!--    geocode("900 Jackson St UNIT 410, Dallas, TX 75202", ACCESS_TOKEN).then( result => {-->
+<!--        console.log(result);-->
+<!--        map.setCenter(result);-->
+<!--        map.setZoom(19);-->
+<!--    });-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,25 +78,95 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
 
 <!-- Mapbox Geocoder Util Methods -->
+<script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
+
+
 
 <!-- Custom JS -->
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZmFycnVraHMiLCJhIjoiY2xwMzU5N3ZiMHczajJtcXZhZXIwdm02ayJ9.IJ2UayzYtY8Vg9VILyUh5g';
-    const map = new mapboxgl.Map({
+    // var ACCESS_TOKEN = YOUR_TOKEN_HERE;
+    mapboxgl.accessToken = ACCESS_TOKEN;
+    var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 10,
         center: [-98.4916, 29.4252]
     });
 
-    // the  geocode method from mapbox-geocoder-utils.js
-    geocode("600 Navarro St #350, San Antonio, TX 78205", "'pk.eyJ1IjoiZmFycnVraHMiLCJhIjoiY2xwMzU5N3ZiMHczajJtcXZhZXIwdm02ayJ9.IJ2UayzYtY8Vg9VILyUh5g'").then( result => {
-        console.log(result);
-        map.setCenter(result);
-        map.setZoom(20);
-    });
+    // reverse geocode method from mapbox-geocoder-utils.js
+    reverseGeocode({lng: -98.4861, lat: 29.4260}, ACCESS_TOKEN).
+    then( results => console.log(results) );
 
 </script>
 </body>
 </html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Map Marker Example</title>-->
+<!--    &lt;!&ndash; Mapbox CSS &ndash;&gt;-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />-->
+<!--    &lt;!&ndash; Custom CSS &ndash;&gt;-->
+<!--    <style>-->
+<!--        #map {-->
+<!--            /* the width and height may be set to any size */-->
+<!--            width: 100%;-->
+<!--            height: 700px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>My First Mapbox Map!</h1>-->
+
+<!--&lt;!&ndash; The HTML element that serves as the Mapbox container &ndash;&gt;-->
+<!--<div id='map'></div>-->
+
+<!--&lt;!&ndash; Mapbox JS &ndash;&gt;-->
+<!--<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>-->
+
+<!--&lt;!&ndash; Mapbox Geocoder Util Methods &ndash;&gt;-->
+<!--<script src="js/keys.js"></script>-->
+<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
+
+<!--&lt;!&ndash; Custom JS &ndash;&gt;-->
+<!--<script>-->
+
+<!--    // const ACCESS_TOKEN = YOUR_ACCESS_TOKEN_HERE;-->
+
+<!--    mapboxgl.accessToken = ACCESS_TOKEN;-->
+
+<!--    const map = new mapboxgl.Map({-->
+<!--        container: 'map',-->
+<!--        style: 'mapbox://styles/mapbox/streets-v9',-->
+<!--        zoom: 10,-->
+<!--        center: [-98.4916, 29.4252]-->
+<!--    });-->
+
+<!--    const alamoInfo = {-->
+<!--        address: "The Alamo, San Antonio",-->
+<!--        popupHTML: "<p>Welcome to the Alamo!</p>"-->
+<!--    };-->
+
+<!--    function placeMarkerAndPopup(info, token, map) {-->
+<!--        geocode(info.address, token).then( coords => {-->
+<!--            let popup = new mapboxgl.Popup()-->
+<!--                .setHTML(info.popupHTML);-->
+<!--            let marker = new mapboxgl.Marker()-->
+<!--                .setLngLat(coords)-->
+<!--                .addTo(map)-->
+<!--                .setPopup(popup);-->
+<!--            popup.addTo(map);-->
+<!--        });-->
+<!--    }-->
+
+<!--    placeMarkerAndPopup(alamoInfo, ACCESS_TOKEN, map);-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

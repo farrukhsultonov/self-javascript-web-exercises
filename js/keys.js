@@ -2,3 +2,6 @@ const MAPBOX_TOKEN = "pk.eyJ1IjoiZmFycnVraHMiLCJhIjoiY2xnMTZydjlzMWd5MDNsbW82bHV
 const OPEN_WEATHER_APPID = "c159e57aaf8500e24808d9b51cb3be68";
 
 const GITHUB_API_KEY = "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";
+
+
+const ACCESS_TOKEN = 'pk.eyJ1IjoiZmFycnVraHMiLCJhIjoiY2xwMzU5N3ZiMHczajJtcXZhZXIwdm02ayJ9.IJ2UayzYtY8Vg9VILyUh5g';
