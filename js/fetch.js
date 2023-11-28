@@ -1,15 +1,17 @@
-function getLastCommit(username)  {
-    fetch(`https://api.github.com/users/${username}/events/public`, {
+function getLastCommit(username, token)  {
+    return fetch(`https://api.github.com/users/${username}/events/public`, {
             headers:
                 {
-                    "Authorization": "token" + GITHUB_API_KEY
+                    "Authorization": "token" + token
                 }
     })
-        .then(response => {
-            return response.json();
-        }).then(data => {
-        console.log(data[0].created_at);
-    });
+        .then(response => response.json());
 }
 
-getLastCommit("farrukhsultonov");
+getLastCommit("sevbautista", GITHUB_API_KEY)
+    .then(data => {
+    console.log(data);
+    let commits = data.filter(event => event.type === "PushEvent");
+    console.log(commits)
+    console.log(new Date(commits[0].created_at));
+});

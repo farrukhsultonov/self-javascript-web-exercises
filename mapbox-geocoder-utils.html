@@ -37,13 +37,6 @@
 <!--        center: [-96.80329, 32.7778]-->
 <!--    });-->
 
-<!--    // the  geocode method from mapbox-geocoder-utils.js-->
-<!--    geocode("900 Jackson St UNIT 410, Dallas, TX 75202", ACCESS_TOKEN).then( result => {-->
-<!--        console.log(result);-->
-<!--        map.setCenter(result);-->
-<!--        map.setZoom(19);-->
-<!--    });-->
-
 <!--</script>-->
 <!--</body>-->
 <!--</html>-->
@@ -94,9 +87,39 @@
         center: [-98.4916, 29.4252]
     });
 
+
+    // the  geocode method from mapbox-geocoder-utils.js
+    geocode("900 Jackson St UNIT 410, Dallas, TX 75202", ACCESS_TOKEN).then( result => {
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(19);
+    });
+
+
     // reverse geocode method from mapbox-geocoder-utils.js
-    reverseGeocode({lng: -98.4861, lat: 29.4260}, ACCESS_TOKEN).
+    reverseGeocode({lng: -96.80329, lat: 32.7778}, ACCESS_TOKEN).
     then( results => console.log(results) );
+
+
+
+    const alamoInfo = {
+        address: "Alamo Drafthouse Cinema Cedars, Dallas",
+        popupHTML: "<p>Welcome to the Alamo!</p>"
+    };
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then( coords => {
+            let popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            let marker = new mapboxgl.Marker()
+                .setLngLat(coords)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+        });
+    }
+
+    placeMarkerAndPopup(alamoInfo, ACCESS_TOKEN, map);
 
 </script>
 </body>
@@ -148,24 +171,7 @@
 <!--        center: [-98.4916, 29.4252]-->
 <!--    });-->
 
-<!--    const alamoInfo = {-->
-<!--        address: "The Alamo, San Antonio",-->
-<!--        popupHTML: "<p>Welcome to the Alamo!</p>"-->
-<!--    };-->
 
-<!--    function placeMarkerAndPopup(info, token, map) {-->
-<!--        geocode(info.address, token).then( coords => {-->
-<!--            let popup = new mapboxgl.Popup()-->
-<!--                .setHTML(info.popupHTML);-->
-<!--            let marker = new mapboxgl.Marker()-->
-<!--                .setLngLat(coords)-->
-<!--                .addTo(map)-->
-<!--                .setPopup(popup);-->
-<!--            popup.addTo(map);-->
-<!--        });-->
-<!--    }-->
-
-<!--    placeMarkerAndPopup(alamoInfo, ACCESS_TOKEN, map);-->
 
 <!--</script>-->
 <!--</body>-->
