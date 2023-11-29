@@ -133,7 +133,7 @@
 
     // when page loads auto shows the forecast for 5 days at the location
     $.get("https://api.openweathermap.org/data/2.5/forecast", {
-        APPID: OPEN_WEATHER_APPID,
+        APPID: OPEN_WEATHER_API_KEY,
         q:     "Dallas, US",
         units: "imperial"
     }).done(function(data) {
@@ -167,7 +167,7 @@
 
         // get the weather data for the clicked location
         $.get("https://api.openweathermap.org/data/2.5/forecast", {
-            APPID: OPEN_WEATHER_APPID,
+            APPID: OPEN_WEATHER_API_KEY,
             lat: click.lngLat.lat,
             lon: click.lngLat.lng,
             units: "imperial"
@@ -214,7 +214,7 @@
 
             // use OpenWeatherMap API to get the weather data for the location
             $.get("https://api.openweathermap.org/data/2.5/forecast", {
-                APPID: OPEN_WEATHER_APPID,
+                APPID: OPEN_WEATHER_API_KEY,
                 lat: latitude,
                 lon: longitude,
                 units: "imperial"

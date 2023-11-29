@@ -19,6 +19,8 @@ function geocode(search, token) {
     //the endpoint when i reuqest lgn and lat based on location name
     var endPoint = '/geocoding/v5/mapbox.places/';
     //this fetch takes in a url endpoint that will return my lgnlat
+    // ${encodeURIComponent(search)} is ensuring that the value of search is properly formatted for a URL. It's a safety measure to handle any special characters like spaces or funny characters that might be present in the search term, making sure the URL is valid and the request to the Mapbox API is correctly formed.
+    // .json?access_token=${token}: Appends the file format as JSON and includes the Mapbox access token as a query parameter
     return fetch(`${baseUrl}${endPoint}${encodeURIComponent(search)}.json?access_token=${token}`)
         .then( res => res.json() )
         // to get all the data from the request, comment out the following three lines...
