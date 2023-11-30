@@ -17,10 +17,10 @@
 
 <h1>My First Mapbox Map!</h1>
 <!--search form-->
-<!--<label for="search">Search</label>-->
-<!--<input id="search">-->
-<!--<button id="sub" type="button">Search</button>-->
-<!-- The HTML element that serves as the Mapbox container -->
+<label for="search">Search</label>
+<input id="search">
+<button id="sub" type="button">Search</button>
+<!-- The HTML element that serves as the Mapbox container-->
 <div id='map'></div>
 
 <!-- Mapbox JS -->
@@ -35,57 +35,57 @@
 <!-- Custom JS -->
 <script>
     //---------------------------------------mapboxgl map-----------------------------------------------------------
-    // mapboxgl.accessToken = ACCESS_TOKEN;
-    // const map = new mapboxgl.Map({
-    //     //setting the location for my map depending on the id in my html
-    //     container: 'map', // container ID
-    //     //this is setting my mapboxgl styling
-    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    //     //this decides how zoomed in my map is
-    //     zoom: 10, // starting zoom
-    //     //this adds the center to my map
-    //     center: [-96.80340786301149, 32.777973763883914] // [lng, lat]
-    // });
+    mapboxgl.accessToken = ACCESS_TOKEN;
+    const map = new mapboxgl.Map({
+        //setting the location for my map depending on the id in my html
+        container: 'map', // container ID
+        //this is setting my mapboxgl styling
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        //this decides how zoomed in my map is
+        zoom: 10, // starting zoom
+        //this adds the center to my map
+        center: [-96.80340786301149, 32.777973763883914] // [lng, lat]
+    });
     //
     // // ---------------------------------------mapboxgl marker-----------------------------------------------------------
-    // //setting a marker object
-    // const marker = new mapboxgl.Marker()
-    //     //setting marker object location
-    //     .setLngLat([-96.80340786301149, 32.777973763883914])
-    //     //adding marker to map
-    //     .addTo(map);
+    //setting a marker object
+    const marker = new mapboxgl.Marker()
+        //setting marker object location
+        .setLngLat([-96.80340786301149, 32.777973763883914])
+        //adding marker to map
+        .addTo(map);
     //
     // //---------------------------------------mapboxgl popup------------------------------------------------------------
-    // // setting the popup object
-    // let popup = new mapboxgl.Popup()
-    //     //setting location of popup
-    //     .setLngLat([-96.80340786301149, 32.777973763883914])
-    //     //setting the content on my popup
-    //     .setHTML("<p>Codeup Rocks!</p>")
-    //     //adding popup to map
-    //     .addTo(map);
+    // setting the popup object
+    let popup = new mapboxgl.Popup()
+        //setting location of popup
+        .setLngLat([-96.80340786301149, 32.777973763883914])
+        //setting the content on my popup
+        .setHTML("<p>Codeup Rocks!</p>")
+        //adding popup to map
+        .addTo(map);
     //
     //
     //
     //
-    // const codeupPopup = new mapboxgl.Popup()
-    //     .setHTML("<p>Welcome to San Antonio!</p>");
-    //
-    // marker.setPopup(codeupPopup);
+    const codeupPopup = new mapboxgl.Popup()
+        .setHTML("<p>Welcome to San Antonio!</p>");
+
+    marker.setPopup(codeupPopup);
     //
     // //---------------------------------------------------SEARCH FUNCTION------------------------------------------------
-    // document.getElementById("sub").addEventListener("click", function (){
-    //     //geocoder function will return a promise, this promise has our location
-    //     let currentLocation = geocode(document.getElementById("search").value, ACCESS_TOKEN);
-    //
-    //     //Use the then funtion to retrieve the information from your promise
-    //     currentLocation.then(function (results){
-    //         //log out my results(the data within my promise)
-    //         console.log(results)
-    //         //we set data equal to center of our map
-    //         map.setCenter([results[0], results[1]])
-    //     })
-    // })
+    document.getElementById("sub").addEventListener("click", function (){
+        //geocoder function will return a promise, this promise has our location
+        let currentLocation = geocode(document.getElementById("search").value, ACCESS_TOKEN);
+
+        //Use the then function to retrieve the information from your promise
+        currentLocation.then(results => {
+            //log out my results(the data within my promise)
+            console.log(results)
+            //we set data equal to center of our map
+            map.setCenter([results[0], results[1]])
+        })
+    })
 
 
 

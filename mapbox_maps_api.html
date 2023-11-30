@@ -7,20 +7,14 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
         header {
             text-align: center;
         }
 
         #map {
-            width: 50%;
-            height: 400px;
-            margin: 15px auto;
+            width: 100%;
+            height: 700px;
         }
 
         .pizza, .restaurantPopup {
@@ -39,19 +33,19 @@
 <script>
     const restaurants = [
         {
-            name: "Bunz Handcrafted Burgers",
-            longitude: -98.49293,
-            latitude: 29.42631
+            name: "Texas Roadhouse",
+            longitude: -96.6386785645222,
+            latitude: 32.983899666581344
         },
         {
-            name: "Domingo Restaurant",
-            longitude: -98.49112532067805,
-            latitude: 29.42487931317373
+            name: "McDonald's",
+            longitude: -96.8030806476694,
+            latitude: 32.77887142354196
         },
         {
-            name: "Sushishima Japanese Restaurant",
-            longitude: -98.52267465374318,
-            latitude: 29.534891415799432
+            name: "Pizza Hut",
+            longitude: -96.77896140164239,
+            latitude: 32.80350262247961
         }
     ]
 
@@ -81,6 +75,7 @@
 
 
     restaurants.forEach((restaurant, index)=> {
+        // checks whether the current iteration is the last one in the loop
         if (index === restaurants.length -1){
             map.setCenter([restaurant.longitude, restaurant.latitude]);
             map.setZoom(10);
