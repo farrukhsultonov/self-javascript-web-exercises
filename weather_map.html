@@ -196,6 +196,7 @@
         fetch('https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(location) + '.json?access_token=' + MAPBOX_TOKEN)
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 // corresponds to the longitute value of the center of the map
                 let longitude = data.features[0].center[0];
                 // corresponds to the lattitude value of the center of the map
