@@ -66,7 +66,7 @@ Calling Methods:
     - Now that we know how to define a method, now lets call or invoke the method.
     - Calling a method will be inside of the main method.
     - When we built a method with parameters, we then call it with an 'argument'
-    - Arguments can be literal values, variables that wil lbe evaluated to a value that is passed to the method.
+    - Arguments can be literal values, variables that will be evaluated to a value that is passed to the method.
     - Member that the data type of the argument must be the same as the data type of the parameters that the method is defined with.
 
     Example:
@@ -134,7 +134,7 @@ Method Overloading:
 
 
 Passing Parameter to Methods
-    - When you pass a value to the argument, a copy of the value passed is created inside of a method and it reassigns a vlue inside of a method
+    - When you pass a value to the argument, a copy of the value passed is created inside of a method and it reassigns a value inside of a method
     - it will not change it outside of the method.
 
     Exercise:
@@ -164,25 +164,3 @@ Recursion:
        }
 
       callMyself(5);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
